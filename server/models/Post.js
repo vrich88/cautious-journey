@@ -37,7 +37,7 @@ const postSchema = new Schema({
     default: 1,
     min: 1,
   },
-  upvotes: {
+  votes: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: "User",
     default: [],

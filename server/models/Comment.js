@@ -17,14 +17,14 @@ const commentSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 1,
-    maxlength: 5000,
+    maxlength: 2500,
   },
   author: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
     required: true,
   },
-  upvotes: {
+  votes: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: "User",
     default: [],

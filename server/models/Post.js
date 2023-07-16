@@ -6,6 +6,7 @@ const { tagSchema } = require("./Tag");
 // how to do equivalent of hasMany etc?
 // the author's type property
 // how are these upvotes working
+// how is the date stuff working
 
 const postSchema = new Schema({
   title: {
@@ -25,7 +26,8 @@ const postSchema = new Schema({
     maxlength: 5000,
     required: true,
   },
-  author: {
+  // user logic
+  user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,

@@ -16,8 +16,8 @@ const commentSchema = new mongoose.Schema({
   comment: {
     type: String,
     required: true,
-    minlength: 1,
-    maxlength: 2500,
+    minLength: 1,
+    maxLength: 2500,
   },
   author: {
     type: mongoose.Schema.ObjectId,

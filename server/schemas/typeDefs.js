@@ -2,6 +2,7 @@ const { gql } = require("apollo-server-express");
 
 // do all args/model props need to be in mutations
 // what should return type be for post mutations
+// is time a string
 
 const typeDefs = gql`
     type User {
@@ -19,7 +20,7 @@ const typeDefs = gql`
         user: User
         views: Number
         votes: Number
-        time:
+        time: String
     }
 
     type Comment {

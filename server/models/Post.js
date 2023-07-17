@@ -12,8 +12,8 @@ const postSchema = new Schema({
   title: {
     type: String,
     required: true,
-    minlength: 5,
-    maxlength: 80,
+    minLength: 5,
+    maxLength: 80,
   },
   tags: {
     type: [tagSchema],
@@ -22,8 +22,8 @@ const postSchema = new Schema({
   body: {
     type: String,
     required: true,
-    minlength: 5,
-    maxlength: 5000,
+    minLength: 5,
+    maxLength: 5000,
     required: true,
   },
   // user logic

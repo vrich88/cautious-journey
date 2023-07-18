@@ -42,14 +42,39 @@ export const CREATE_POST = gql`
 `;
 
 export const DELETE_POST = gql`
-  mutation removeBook($_id: ID!) {
-    removeBook(_id: $_id) {
+  mutation deletePost($_id: ID!) {
+    deletePost(_id: $_id) {
       _id
       title
       tags
       body
       user
       views
+      votes
+      time
+      }
+    }
+  }
+`;
+
+export const CREATE_COMMENT = gql`
+  mutation createComment($commentData: CommentInput!) {
+    createComment(commentData: $commentData) {
+      _id
+      post
+      comment
+      votes
+      time
+    }
+  }
+`;
+
+export const DELETE_COMMENT = gql`
+  mutation deleteComment($_id: ID!) {
+    deleteComment(_id: $_id) {
+      _id
+      post
+      comment
       votes
       time
       }

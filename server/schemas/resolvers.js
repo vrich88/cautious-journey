@@ -55,6 +55,22 @@ const resolvers = {
       throw new AuthenticationError("The truth is out there");
     },
   },
+  createComment: async (parent, args, context) => {
+    if (context.user) {
+      const newComment = await Comment.create(args);
+      return newComment;
+    }
+    throw new AuthenticationError("Only those in the know can do that");
+  },
+
+  deleteComment: async (parent, args, context) => {
+    if (context.user) {
+      const updatedDB = await db.collection.findOneAndDelete(args);
+      return updatedDB;
+    }
+    throw new AuthenticationError("The truth is out there");
+  },
+},
 };
 
 module.exports = resolvers;

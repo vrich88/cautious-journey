@@ -20,15 +20,16 @@ const typeDefs = gql`
         user: User
         views: Number
         votes: Number
-        time: String
+        time: Date
+        comments: [Comment]
     }
 
     type Comment {
         _id: ID!
-        post: String
+        post: Post
         comment: String
         votes: Number
-        time: String
+        time: Date
     }
 
     type Tag {
@@ -49,7 +50,7 @@ const typeDefs = gql`
         user: User
         views: Number
         votes: Number
-        time: String
+        time: Date
     }
 
     type CommentInput {
@@ -57,7 +58,7 @@ const typeDefs = gql`
         post: String
         comment: String
         votes: Number
-        time: String
+        time: Date
     }
 
     type Query {
@@ -68,8 +69,10 @@ const typeDefs = gql`
     type Mutation {
         createUser(username: String!, email: String!, password: String!): Auth
         login(username: String!, password: String!): Auth
-        createPost(postData: PostInput!): 
-        deletePost(_id: ID!): 
+        createPost(postData: PostInput!): User
+        deletePost(_id: ID!): User
+        createComment(commentData: CommentInput!): User
+        deleteComment(_id: ID!): User
     }
 `;
 module.exports = typeDefs;

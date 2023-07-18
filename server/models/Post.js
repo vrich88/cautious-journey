@@ -1,12 +1,10 @@
 const { Schema, model } = require("mongoose");
-const { User } = require("./User");
+// const { User } = require("./User");
+const { User } = require("./User")
+const {Comment} = require("./Comment")
 const { tagSchema } = require("./Tag");
 
-// should post be exported separately from user (unlike 21)?
-// how to do equivalent of hasMany etc?
-// the author's type property
-// how are these upvotes working
-// how is the date stuff working
+// look into react-moment dependency and how modify Moment tag on front end
 
 const postSchema = new Schema({
   title: {
@@ -32,21 +30,30 @@ const postSchema = new Schema({
     ref: "User",
     required: true,
   },
+  comments: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "Comment",
+    required: false,
+  }
   views: {
     type: Number,
     default: 1,
     min: 1,
   },
-  votes: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: "User",
-    default: [],
-  },
+  // votes: {
+  //   type: [mongoose.Schema.Types.ObjectId],
+  //   ref: "User",
+  //   default: [],
+  // },
   time: {
     type: Date,
     default: Date.now,
   },
 });
+
+// postSchema.virtual('user').get(function () {
+
+// })
 
 const Post = model("Post", postSchema);
 

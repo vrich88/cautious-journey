@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
+import UFOsubforum from "./pages/UFOsubforum";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -36,11 +37,11 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter >
+      <Router >
         <Routes >
-
+          <Route path="/" element={<UFOsubforum/>}/>
         </Routes>
-      </BrowserRouter>
+      </Router>
     </ApolloProvider>
   );
 }

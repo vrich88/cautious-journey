@@ -49,3 +49,50 @@ export default function App() {
             Sign up today! Comes with a complementary foil hat! 
           </chakra.p>
         </GridItem>
+        <GridItem colSpan={{ base: "auto", md: 4 }}>
+          <Box as="form" mb={6} rounded="lg" shadow="xl">
+            <Center pb={0} color="#009D7D" _dark={{ color: "purple" }}>
+              <chakra.p pt={2}>Start tuning in now</chakra.p>
+            </Center>
+            <SimpleGrid
+              columns={1}
+              px={6}
+              py={4}
+              spacing={4}
+              borderBottom="solid 1px"
+              // this changes the line breaks color
+              color="#009D7D"
+              _dark={{ color: "gray.700" }}
+            >
+              <Flex>
+                <VisuallyHidden>First Name</VisuallyHidden>
+                <Input mt={0} type="text" placeholder="First Name" />
+              </Flex>
+              <Flex>
+                <VisuallyHidden>Email Address</VisuallyHidden>
+                <Input mt={0} type="email" placeholder="Email Address" />
+              </Flex>
+              <Flex>
+                <VisuallyHidden>Password</VisuallyHidden>
+                <Input mt={0} type="password" placeholder="Password" />
+              </Flex>
+            </SimpleGrid>
+            <Flex px={6} py={4}>
+              <Button
+                py={2}
+                w="full" type="submit"
+                colorScheme="yellow"
+              >
+                Sign Up Today!
+              </Button>
+            </Flex>
+          </Box>
+          <chakra.p fontSize="xs" textAlign="center" color="gray.600">
+            By signing up you agree to our{" "}
+            <chakra.a color="white">Terms of Service</chakra.a>
+          </chakra.p>
+        </GridItem>
+      </SimpleGrid>
+    </Box>
+  );
+}

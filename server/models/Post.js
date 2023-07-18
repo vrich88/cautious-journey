@@ -34,7 +34,7 @@ const postSchema = new Schema({
     type: [mongoose.Schema.Types.ObjectId],
     ref: "Comment",
     required: false,
-  }
+  },
   views: {
     type: Number,
     default: 1,

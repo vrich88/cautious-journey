@@ -20,7 +20,7 @@ const userSchema = new Schema({
     required: true,
     // make sure this works
     validate: {
-      is: ["^(?=.[a-z])(?=.[A-Z])(?=.d)(?=.[@$!%?&])[A-Za-zd@$!%?&]{8,}$"],
+      is: [/"^(?=.[a-z])(?=.[A-Z])(?=.d)(?=.[@$!%?&])[A-Za-zd@$!%?&]{8,}$"/],
     },
   },
   isAdmin: {

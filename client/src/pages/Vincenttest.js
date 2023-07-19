@@ -1,12 +1,12 @@
-import React from 'react';
-import CommentCard from '../components/comments/CommentCard';
+import React from "react";
+import CommentCard from "../components/comments/CommentCard";
 
-function Vtest() {
+function Vincenttest() {
   return (
     <div>
       <CommentCard />
     </div>
-  )
+  );
 }
 
-export default Vtest
+export default Vincenttest;

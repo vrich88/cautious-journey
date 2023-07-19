@@ -1,11 +1,12 @@
 import React from "react";
 import { chakra, Flex, Icon } from "@chakra-ui/react";
 
-export default function App(){
+export default function footer(){
   return (
     <Flex
       w="full"
-      bg="#AAC4FF"
+      //footer border color
+      bg="primary.800"
       _dark={{ bg: "#3e3e3e" }}
       p= "0.25rem"
       alignItems="center"
@@ -21,7 +22,8 @@ export default function App(){
         justify="space-between"
         px="6"
         py="4"
-        bg="#FFBCD1"
+        //Main footer background color 
+        bg="primary.800"
         _dark={{
           bg: "gray.900",
         }}
@@ -30,9 +32,10 @@ export default function App(){
           href="#"
           fontSize="xl"
           fontWeight="bold"
-          color="gray.600"
+          //footer text color 
+          color="primary.900"
           _dark={{
-            color: "#5DA271",
+            color: "#2A2727",
             _hover: {
               color: "gray.300",
             },
@@ -46,7 +49,8 @@ export default function App(){
 
         <chakra.p
           py={{ base: "2", sm: "0" }}
-          color="gray.800"
+          //footer centered text color
+          color="primary.900"
           _dark={{ color: "white" }}
         >
           Or maybe its a crackhead......

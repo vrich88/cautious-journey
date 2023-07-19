@@ -6,11 +6,11 @@ const colors = {
     200: "#1c5858", /* forest */
     300: "#e4ccf7", /* pale lavender */
     400: "#c59ae2", /* dark lavender  */
-    500: "#61DBFB", /*  */
-    600: "#0A864F", /*  */
-    700: "#086F42", /*  */
-    800: "#075C37", /*  */
-    900: "#064C2E", /*  */
+    500: "#024C4F", /* Dark Teal Green */
+    600: "#E95F2E", /* Bright Burnt Orange */
+    700: "#5af29b", /* Bright Mint */
+    800: "#3b072e", /* Dark Cherry */
+    900: "#a7ff3f", /* Radioactive Green */
   },
 };
 

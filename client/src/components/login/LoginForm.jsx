@@ -11,12 +11,12 @@ import {
 } from '@chakra-ui/react';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
 //login logic here
-    console.log('Email:', email);
+    console.log('Username:', username);
     console.log('Password:', password);
   };
 // housing here
@@ -33,11 +33,11 @@ const LoginForm = () => {
     >
       
       <Heading size="lg" marginBottom="9">Login</Heading>
-      <FormControl id="email" marginBottom="4">
-        <FormLabel>Email address</FormLabel>
+      <FormControl id="username" marginBottom="4">
+        <FormLabel>User Name</FormLabel>
         <Input
-          type="email"
-          placeholder="Enter your email"
+          type="username"
+          placeholder="Enter your username"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />

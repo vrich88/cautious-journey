@@ -70,6 +70,10 @@ export default function App() {
               </Flex>
               <Flex>
                 <VisuallyHidden>Email Address</VisuallyHidden>
+                <Input mt={0} type="username" placeholder="Username" />
+              </Flex>
+              <Flex>
+                <VisuallyHidden>Email Address</VisuallyHidden>
                 <Input mt={0} type="email" placeholder="Email Address" />
               </Flex>
               <Flex>

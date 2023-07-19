@@ -11,6 +11,7 @@ import "./App.css";
 import Footer from "./components/footer/Footer";
 import UFOsubforum from "./pages/UFOsubforum";
 import Homepage from "./pages/Homepage";
+import Signup from "./pages/Signup";
 
 // test component pages
 import Vincenttest from "./pages/Vincenttest";
@@ -57,6 +58,7 @@ function App() {
           <Route path="/dannytest" element={<Dannytest />}/>
           <Route path="/matttest" element={<Matttest />}/>
           <Route path="/lindseytest" element={<Lindseytest />}/>
+          <Route path="/signup" element={<Signup />}/>
         </Routes>
       </Router>
       <Footer />

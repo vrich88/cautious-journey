@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   chakra,
   Box,
@@ -12,10 +13,12 @@ import {
   Input
 } from "@chakra-ui/react";
 
-export default function App() {
+export default function SignupForm() {
   // bg = background color and everything below where its placed colors it
   return (
-    <Box px={8} py={24} mx="auto" bg="white">
+    <Box px={8} py={24} mx="auto" bg={["primary.800"]}>
+
+      
       
       <SimpleGrid
         alignItems="center"
@@ -33,25 +36,25 @@ export default function App() {
             fontSize={{ base: "3xl", md: "4xl" }}
             fontWeight="bold"
             lineHeight={{ base: "shorter", md: "none" }}
-            color="black"
+            color="primary.900"
             _dark={{ color: "gray.200" }}
             letterSpacing={{ base: "normal", md: "tight" }}
           >
-            Come, join us and tell us your truth!
+            Join us and tell us your truth!
           </chakra.h1>
           <chakra.p
             mb={{ base: 10, md: 4 }}
             fontSize={{ base: "lg", md: "xl" }}
             fontWeight="thin"
-            color="black"
+            color="primary.900"
             letterSpacing="wider"
           >
             Sign up today! Comes with a complementary foil hat! 
           </chakra.p>
         </GridItem>
         <GridItem colSpan={{ base: "auto", md: 4 }}>
-          <Box as="form" mb={6} rounded="lg" shadow="xl">
-            <Center pb={0} color="#009D7D" _dark={{ color: "purple" }}>
+          <Box as="form" mb={6} rounded="lg" shadow="xl" bg={["white"]}>
+            <Center pb={0} color="Black" _dark={{ color: "white" }}>
               <chakra.p pt={2}>Start tuning in now</chakra.p>
             </Center>
             <SimpleGrid
@@ -65,12 +68,8 @@ export default function App() {
               _dark={{ color: "gray.700" }}
             >
               <Flex>
-                <VisuallyHidden>First Name</VisuallyHidden>
-                <Input mt={0} type="text" placeholder="First Name" />
-              </Flex>
-              <Flex>
-                <VisuallyHidden>Email Address</VisuallyHidden>
-                <Input mt={0} type="username" placeholder="Username" />
+                <VisuallyHidden>User Name</VisuallyHidden>
+                <Input mt={0} type="text" placeholder="Username" />
               </Flex>
               <Flex>
                 <VisuallyHidden>Email Address</VisuallyHidden>
@@ -85,15 +84,15 @@ export default function App() {
               <Button
                 py={2}
                 w="full" type="submit"
-                colorScheme="yellow"
+                bg={["primary.900" ]}
               >
-                Sign Up Today!
+                Free foil when you join!
               </Button>
             </Flex>
           </Box>
-          <chakra.p fontSize="xs" textAlign="center" color="gray.600">
+          <chakra.p fontSize="xs" textAlign="center" color="primary.900">
             By signing up you agree to our{" "}
-            <chakra.a color="white">Terms of Service</chakra.a>
+            <chakra.a color="primary.900">Terms of Service</chakra.a>
           </chakra.p>
         </GridItem>
       </SimpleGrid>

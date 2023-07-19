@@ -8,7 +8,16 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import './App.css';
+import Footer from "./components/footer/Footer";
 import UFOsubforum from "./pages/UFOsubforum";
+
+// test component pages 
+import Vincenttest from './pages/Vincenttest';
+import Joshtest from './pages/Joshtest';
+import Jackietest from './pages/Jackietest';
+import Dannytest from "./pages/Dannytest";
+import Matttest from './pages/Matttest';
+import Lindseytest from './pages/Lindseytest';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,8 +49,15 @@ function App() {
       <Router >
         <Routes >
           <Route path="/" element={<UFOsubforum/>}/>
+          <Route path="/Vincenttest" element={<Vincenttest />}/>
+          <Route path="/Joshtest" element={<Joshtest />}/>
+          <Route path="/Jackietest" element={<Jackietest />}/>
+          <Route path="/Dannytest" element={<Dannytest />}/>
+          <Route path="/Matttest" element={<Matttest />}/>
+          <Route path="/Lindseytest" element={<Lindseytest />}/>
         </Routes>
       </Router>
+      <Footer />
     </ApolloProvider>
   );
 }

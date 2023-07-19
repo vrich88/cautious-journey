@@ -17,7 +17,7 @@ import {
 import { AiOutlineMenu } from "react-icons/ai";
 
 
-export default function App(){
+export default function Navbar(){
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
 
@@ -105,7 +105,7 @@ export default function App(){
                   Company
                 </Button>
                 <Button w="full" variant="ghost">
-                  Sign in
+                  
                 </Button>
               </VStack>
             </Box>

@@ -1,7 +1,8 @@
 import React from "react";
 import { chakra, Flex, Icon } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-export default function App(){
+export default function Footer(){
   return (
     <Flex
       w="full"
@@ -97,6 +98,14 @@ export default function App(){
           </chakra.a>
         </Flex>
       </Flex>
+
+{/* test pages links remove from final product */}
+<Link to = "/Vincenttest">Vincent</Link>
+<Link to = "/Joshtest">Josh</Link>
+<Link to = "/Jackietest">Jackie</Link>
+<Link to = "/Dannytest">Danny</Link>
+<Link to = "/Matttest">Matt</Link>
+<Link to = "/Lindseytest">Lindsey</Link>
     </Flex>
   );
 };

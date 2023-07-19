@@ -13,7 +13,7 @@ import {
   IconButton,
   CloseButton,
 } from "@chakra-ui/react";
-import { AiOutlineMenu } from "react-icons/ai";
+// import { AiOutlineMenu } from "react-icons/ai";
 export default function App(){
   const bg = useColorModeValue("white", "gray.800");
   const mobileNav = useDisclosure();
@@ -47,9 +47,9 @@ export default function App(){
               color="brand.500"
               display={{ base: "none", md: "inline-flex" }}
             >
-              <Button variant="ghost"><Link to = "/start">Start</Link></Button>
-              <Button variant="ghost"><Link to = "/Signup">Signup</Link></Button>
-              <Button variant="ghost"><Link to ="/Login">Login</Link></Button>
+              {/* <Button variant="ghost"><Link to = "/start">Start</Link></Button> */}
+              {/* <Button variant="ghost"><Link to = "/Signup">Signup</Link></Button> */}
+              {/* <Button variant="ghost"><Link to ="/Login">Login</Link></Button> */}
               <Button variant="ghost">nah</Button>
               <Button variant="ghost">sup</Button>
             </HStack>
@@ -64,7 +64,7 @@ export default function App(){
                 color="gray.800"
                 _dark={{ color: "inherit" }}
                 variant="ghost"
-                icon={<AiOutlineMenu />}
+                // icon={<AiOutlineMenu />}
                 onClick={mobileNav.onOpen}
               />
               <VStack

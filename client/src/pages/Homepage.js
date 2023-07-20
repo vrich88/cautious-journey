@@ -22,6 +22,14 @@ import {
   Grid,
   GridItem,
   Spacer,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  TabIndicator,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 import { FaBell, FaClipboardCheck, FaRss } from "react-icons/fa";
 import { AiFillGift } from "react-icons/ai";
@@ -32,7 +40,7 @@ import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
 import React from "react";
 const breakpoints = {
   sm: "320px",
-  md: "768px",
+  md: "800px",
   lg: "960px",
   xl: "1200px",
 };
@@ -40,7 +48,7 @@ const breakpoints = {
 export default function Homepage() {
   // const mobileNav = useDisclosure();
   return (
-    <Box as="main" p="4">
+    <Box as="main" p="4" bg={["primary.800"]}>
       <Flex>
         {/* Add content here, remove div below  /}
             <Box borderWidth="4px" borderStyle="dashed" rounded="md" h="96" />
@@ -59,9 +67,9 @@ export default function Homepage() {
             <Box
               borderWidth="4px"
               borderColor={"black"}
-              backgroundColor={"blackAlpha.800"}
+              backgroundColor={"gray.900"}
               mt={"20"}
-              h="60vh"
+              h={{base:"70vh",sm:"65vh", md:"60vh", xl:"60vh"}}
               w={{ base: "350px", md: "270px", lg: "20rem" }}
               borderBottomRightRadius={120}
               borderBottomLeftRadius={120}
@@ -117,25 +125,47 @@ export default function Homepage() {
         </Box>
         {/* Folder Container */}
         <Box
-          borderWidth="0px"
+          borderWidth="1px"
           rounded="md"
           h="80vh"
-          w={{ base: "1px", md: "1px", lg: "65%" }}
+          w={{ base: "0px", md: "20rem", lg: "65%" }}
         >
           <Flex justifyContent={"center"}>
             <Box
-              borderWidth="0px"
+              borderWidth="1px"
               borderColor={"white"}
               mt={"20"}
               h={{ base: "0px", md: "0px", lg: "60vh" }}
-              w={{ base: "0rem", md: "0px", lg: "50rem" }}
+              w={{ base: "0rem", md: "20rem", lg: "50rem" }}
             >
+              <Hide breakpoint='(max-width: 800px)'>
+              <Tabs isFitted variant='enclosed' borderColor={"white"} >
+            <TabList mb='auto' bg="tan" colorScheme="" ml="10px"  borderTopLeftRadius={"10px"} borderTopRightRadius={"10px"}
+            w={{ base: "0px", md: "auto", lg: "400px" }}
+            h={{ base: "0px", md: "30px", lg: "auto" }}
+            >
+              <Tab mr="0px" borderTopLeftRadius={"10px"} borderTopRightRadius={"10px"}
+              w={{ base: "auto", md: "auto", lg: "400px" }}
+              h={{ base: "auto", md: "auto", lg: "auto" }}
+              >One</Tab>
+              <Tab borderTopLeftRadius={"10px"} borderTopRightRadius={"10px"}
+            w={{ base: "auto", md: "auto", lg: "400px" }}
+            h={{ base: "auto", md: "auto", lg: "auto" }}
+              >Two</Tab>
+            </TabList>
+
+            <TabIndicator
+            height="1px"
+            bg="tan"
+            borderRadius={"0px"}
+            mt="-1.5px"
+            />
               {/* Folder */}
               <Box
                 borderWidth="0px"
                 borderColor={"tan"}
-                backgroundColor={"tan"}
-                mt={"4rem"}
+                // backgroundColor={"tan"}
+                mt={"0rem"}
                 h={{ base: "0px", md: "52vh", lg: "52vh" }}
                 w={{ base: "15rem", md: "30rem", lg: "40rem", xl: "50rem" }}
                 borderTopLeftRadius={"6px"}
@@ -143,8 +173,21 @@ export default function Homepage() {
                 borderBottomLeftRadius={"6px"}
                 borderBottomRightRadius={"3px"}
                 boxShadow={"10px -5px 30px black, 10px -5px rgb(181 166 145) "}
-              ></Box>
+                bgGradient="linear(to-t, rgb(200 162 112), tan, tan)"
+              >
+                 <TabPanels>
+              <TabPanel>
+                <p>one!</p>
+              </TabPanel>
+              <TabPanel>
+                <p>two!</p>
+              </TabPanel>
+            </TabPanels>
+              </Box>
+              </Tabs>
+              </Hide>
             </Box>
+            
           </Flex>
         </Box>
       </Flex>

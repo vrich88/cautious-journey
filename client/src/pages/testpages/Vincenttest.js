@@ -1,5 +1,5 @@
 import React from "react";
-import CommentCard from "../components/comments/CommentCard";
+import CommentCard from "../../components/comments/CommentCard";
 
 function Vincenttest() {
   return (

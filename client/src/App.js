@@ -14,12 +14,12 @@ import Homepage from "./pages/Homepage";
 import Signup from "./pages/Signup";
 
 // test component pages
-import Vincenttest from "./pages/Vincenttest";
-import Joshtest from './pages/Joshtest';
-import Jackietest from './pages/Jackietest';
-import Dannytest from "./pages/Dannytest";
+import Vincenttest from "./pages/testpages/Vincenttest";
+import Joshtest from './pages/testpages/Joshtest';
+import Jackietest from './pages/testpages/Jackietest';
+import Dannytest from "./pages/testpages/Dannytest";
 import Matttest from './pages/Matttest';
-import Lindseytest from './pages/Lindseytest';
+import Lindseytest from './pages/testpages/Lindseytest';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({

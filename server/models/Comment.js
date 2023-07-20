@@ -13,13 +13,13 @@ const commentSchema = new mongoose.Schema({
     ref: "Post",
     required: true,
   },
-  comment: {
+  body: {
     type: String,
     required: true,
     minLength: 1,
     maxLength: 2500,
   },
-  author: {
+  user: {
     type: mongoose.Schema.ObjectId,
     ref: "User",
     required: true,

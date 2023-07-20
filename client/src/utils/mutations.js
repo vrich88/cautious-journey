@@ -61,8 +61,9 @@ export const CREATE_COMMENT = gql`
   mutation createComment($commentData: CommentInput!) {
     createComment(commentData: $commentData) {
       _id
+      user
       post
-      comment
+      body
       votes
       time
     }
@@ -73,8 +74,9 @@ export const DELETE_COMMENT = gql`
   mutation deleteComment($_id: ID!) {
     deleteComment(_id: $_id) {
       _id
+      user
       post
-      comment
+      body
       votes
       time
       }

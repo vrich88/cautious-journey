@@ -27,7 +27,7 @@ const typeDefs = gql`
     type Comment {
         _id: ID!
         post: Post
-        comment: String
+        body: String
         votes: Number
         time: Date
     }

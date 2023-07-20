@@ -15,11 +15,11 @@ import Signup from "./pages/Signup";
 
 // test component pages
 import Vincenttest from "./pages/testpages/Vincenttest";
-import Joshtest from './pages/testpages/Joshtest';
-import Jackietest from './pages/testpages/Jackietest';
+import Joshtest from "./pages/testpages/Joshtest";
+import Jackietest from "./pages/testpages/Jackietest";
 import Dannytest from "./pages/testpages/Dannytest";
-import Matttest from './pages/Matttest';
-import Lindseytest from './pages/testpages/Lindseytest';
+import Matttest from "./pages/testpages/Matttest";
+import Lindseytest from "./pages/testpages/Lindseytest";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -53,12 +53,12 @@ function App() {
           <Route path="/" element={<UFOsubforum />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/vincenttest" element={<Vincenttest />} />
-          <Route path="/joshtest" element={<Joshtest />}/>
-          <Route path="/jackietest" element={<Jackietest />}/>
-          <Route path="/dannytest" element={<Dannytest />}/>
-          <Route path="/matttest" element={<Matttest />}/>
-          <Route path="/lindseytest" element={<Lindseytest />}/>
-          <Route path="/signup" element={<Signup />}/>
+          <Route path="/joshtest" element={<Joshtest />} />
+          <Route path="/jackietest" element={<Jackietest />} />
+          <Route path="/dannytest" element={<Dannytest />} />
+          <Route path="/matttest" element={<Matttest />} />
+          <Route path="/lindseytest" element={<Lindseytest />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </Router>
       <Footer />

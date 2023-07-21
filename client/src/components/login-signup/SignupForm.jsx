@@ -1,28 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_USER } from "../../utils/mutations";
-import Auth from '../../utils/auth';
+import Auth from "../../utils/auth";
 
 import {
   chakra,
+  Alert,
+  FormControl,
+  Divider,
   Box,
   GridItem,
   Button,
   Center,
   Flex,
- 
   SimpleGrid,
   VisuallyHidden,
-  Input
+  Input,
 } from "@chakra-ui/react";
-
-
 
 export default function SignupForm() {
   const [userFormData, setUserFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
 
   const [validated] = useState(false);
@@ -65,17 +65,15 @@ export default function SignupForm() {
     }
 
     setUserFormData({
-      username: '',
-      email: '',
-      password: '',
+      username: "",
+      email: "",
+      password: "",
     });
   };
-
 
   // bg = background color and everything below where its placed colors it
   return (
     <Box px={8} py={24} mx="auto" bg={["black"]}>
-      
       <SimpleGrid
         alignItems="center"
         w={{ base: "full", xl: 11 / 12 }}
@@ -105,11 +103,11 @@ export default function SignupForm() {
             color="primary.900"
             letterSpacing="wider"
           >
-            Sign up today! Comes with a complementary foil hat! 
+            Sign up today! Comes with a complementary foil hat!
           </chakra.p>
         </GridItem>
         <GridItem colSpan={{ base: "auto", md: 4 }}>
-          <Box as="form" mb={6} rounded="lg" shadow="xl" bg={["white"]}>
+          <Box as="form" mb={6} rounded="lg" shadow="xl" bg={["white"]} noValidate validated={validated} onSubmit={handleFormSubmit}>
             <Center pb={0} color="Black" _dark={{ color: "white" }}>
               <chakra.p pt={2}>Start tuning in now</chakra.p>
             </Center>
@@ -124,30 +122,64 @@ export default function SignupForm() {
               _dark={{ color: "gray.700" }}
             >
               <Flex>
-                <VisuallyHidden>User Name</VisuallyHidden>
-                <Input 
-                  mt={0} 
-                  type="text" 
-                  placeholder="Username" 
-                  onChange={handleInputChange}
-                />
+                <FormControl>
+                  <VisuallyHidden>User Name</VisuallyHidden>
+                  <Input
+                    mt={0}
+                    type="text"
+                    placeholder="Username"
+                    onChange={handleInputChange}
+                    name="username"
+                    value={userFormData.username}
+                    required
+                  />
+                </FormControl>
               </Flex>
               <Flex>
-                <VisuallyHidden>Email Address</VisuallyHidden>
-                <Input mt={0} type="email" placeholder="Email Address" />
+                <FormControl>
+                  <VisuallyHidden>Email Address</VisuallyHidden>
+                  <Input
+                    mt={0}
+                    type="email"
+                    placeholder="Email Address"
+                    onChange={handleInputChange}
+                    name="email"
+                    value={userFormData.email}
+                    required
+                  />
+                </FormControl>
               </Flex>
               <Flex>
-                <VisuallyHidden>Password</VisuallyHidden>
-                <Input mt={0} type="password" placeholder="Password" />
+                <FormControl>
+                  <VisuallyHidden>Password</VisuallyHidden>
+                  <Input
+                    mt={0}
+                    type="password"
+                    placeholder="Password"
+                    onChange={handleInputChange}
+                    name="password"
+                    value={userFormData.password}
+                    required
+                  />
+                </FormControl>
               </Flex>
             </SimpleGrid>
             <Flex px={6} py={4}>
               <Button
                 py={2}
-                w="full" type="submit"
-                bg={["primary.900" ]}
+                w="full"
+                type="submit"
+                bg={["primary.900"]}
+                disabled={
+                  !(
+                    userFormData.username &&
+                    userFormData.email &&
+                    userFormData.password
+                  )
+                }
+                variant="success"
               >
-                Free foil when you join!
+                Take the Red Pill
               </Button>
             </Flex>
           </Box>

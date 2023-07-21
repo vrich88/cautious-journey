@@ -13,7 +13,7 @@ export default function Footer() {
           justify="space-between"
           px="6"
           py="4"
-          bg="#FFBCD1"
+          bg="primary.900"
           _dark={{
             bg: "gray.900",
           }}

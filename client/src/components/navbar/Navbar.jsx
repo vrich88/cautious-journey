@@ -21,6 +21,7 @@ import { AiFillHome, AiOutlineInbox, AiOutlineMenu } from "react-icons/ai";
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import alien from "../../images/alien.png"
+
 const Navbar = () => {
   const bg = useColorModeValue("white", "gray.800");
   const cl = useColorModeValue("gray.800", "white");
@@ -34,6 +35,7 @@ const Navbar = () => {
   const tcl = useColorModeValue("black", "gray.50");
   const dcl = useColorModeValue("black", "gray.50");
   const hbgh = useColorModeValue("black", "brand.500");
+
   const Section = (props) => {
     return (
       <Link
@@ -128,6 +130,7 @@ const Navbar = () => {
         >
           We can't promise security, but we know a guy who can fight.
         </Section>
+
       </SimpleGrid>
     </React.Fragment>
   );
@@ -168,6 +171,7 @@ const Navbar = () => {
       </Button>
     </VStack>
   );
+
   return (
     <React.Fragment>
       <chakra.header
@@ -314,12 +318,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
 

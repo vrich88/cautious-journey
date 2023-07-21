@@ -12,6 +12,7 @@ import Footer from "./components/footer/Footer";
 import UFOsubforum from "./pages/UFOsubforum";
 import Homepage from "./pages/Homepage";
 import Signup from "./pages/Signup";
+import Navbar from "./components/navbar/Navbar"
 
 // test component pages
 import Vincenttest from "./pages/testpages/Vincenttest";
@@ -49,6 +50,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        < Navbar/>
         <Routes>
           <Route path="/" element={<UFOsubforum />} />
           <Route path="/homepage" element={<Homepage />} />

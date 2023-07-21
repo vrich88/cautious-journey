@@ -72,7 +72,6 @@ const Navbar = () => {
       </Link>
     );
   };
-
   const Features = (
     <React.Fragment>
       <SimpleGrid
@@ -105,7 +104,6 @@ const Navbar = () => {
         >
           High traffic stories move up high on your feed. You will never miss out on a strange encounter.
         </Section>
-
         <Section
           title="Engagement"
           icon={
@@ -119,7 +117,6 @@ const Navbar = () => {
         >
           Engage in conversations with other true believers.
         </Section>
-
         <Section
           title="Security"
           icon={
@@ -134,9 +131,7 @@ const Navbar = () => {
           We can't promise security, but we know a guy who can fight.
         </Section>
 
-        
       </SimpleGrid>
-      
     </React.Fragment>
   );
   const MobileNavContent = (
@@ -316,7 +311,6 @@ const Navbar = () => {
             />
           </Box>
         </Flex>
-
         {MobileNavContent}
       </chakra.header>
     </React.Fragment>
@@ -324,3 +318,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

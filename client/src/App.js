@@ -50,17 +50,19 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        < Navbar/>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<UFOsubforum />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
+          <Route path="/signup" element={<Signup />} />
+
+          {/* testing routes only; remove on full deployment */}
           <Route path="/vincenttest" element={<Vincenttest />} />
           <Route path="/joshtest" element={<Joshtest />} />
           <Route path="/jackietest" element={<Jackietest />} />
           <Route path="/dannytest" element={<Dannytest />} />
           <Route path="/matttest" element={<Matttest />} />
           <Route path="/lindseytest" element={<Lindseytest />} />
-          <Route path="/signup" element={<Signup />} />
         </Routes>
       </Router>
       <Footer />

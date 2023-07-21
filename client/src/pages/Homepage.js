@@ -59,7 +59,7 @@ export default function Homepage() {
             {/ Add content here, remove div below  */}
         {/* Black device Container */}
         <Box
-          borderWidth="1px"
+          borderWidth="0px"
           rounded="md"
           h="80vh"
           w={{ base: "700px", md: "300px", lg: "35%" }}
@@ -67,10 +67,10 @@ export default function Homepage() {
           <Flex justifyContent={"center"}>
             {/* Black device */}
             <Box
-              borderWidth="1px"
+              borderWidth="0px"
               borderColor={"white"}
               backgroundColor={""}
-              mt={"20"}
+              mt={"16"}
               h={{base:"70vh",sm:"65vh", md:"70vh", xl:"60vh"}}
               w={{ base: "350px", md: "270px", lg: "20rem" }}
               
@@ -151,7 +151,7 @@ export default function Homepage() {
         </Box>
         {/* Folder Container */}
         <Box
-          borderWidth="1px"
+          borderWidth="0px"
           rounded="md"
           h="80vh"
           w={{ base: "0px", md: "20rem", lg: "65%" }}

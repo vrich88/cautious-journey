@@ -74,9 +74,7 @@ export default function SignupForm() {
 
   // bg = background color and everything below where its placed colors it
   return (
-    <Box px={8} py={24} mx="auto" bg={["primary.800"]}>
-
-      
+    <Box px={8} py={24} mx="auto" bg={["black"]}>
       
       <SimpleGrid
         alignItems="center"
@@ -127,7 +125,12 @@ export default function SignupForm() {
             >
               <Flex>
                 <VisuallyHidden>User Name</VisuallyHidden>
-                <Input mt={0} type="text" placeholder="Username" />
+                <Input 
+                  mt={0} 
+                  type="text" 
+                  placeholder="Username" 
+                  onChange={handleInputChange}
+                />
               </Flex>
               <Flex>
                 <VisuallyHidden>Email Address</VisuallyHidden>

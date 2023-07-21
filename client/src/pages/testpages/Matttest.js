@@ -1,6 +1,6 @@
 import React from "react";
 import Signup from "../Signup";
-import SinglePostReader from "../SinglePostReader";
+import SinglePostReader from "../../components/singlePostReader/SinglePostReader";
 
 function Matttest() {
   return (

@@ -13,6 +13,7 @@ import UFOsubforum from "./pages/UFOsubforum";
 import Homepage from "./pages/Homepage";
 import Signup from "./pages/Signup";
 import Navbar from "./components/navbar/Navbar"
+import SinglePostReader from "./pages/SinglePostReader";
 
 // test component pages
 import Vincenttest from "./pages/testpages/Vincenttest";

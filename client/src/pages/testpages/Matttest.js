@@ -1,10 +1,11 @@
 import React from "react";
 import Signup from "../Signup";
+import SinglePostReader from "../SinglePostReader";
 
 function Matttest() {
   return (
     <div>
-      <Signup />
+      <SinglePostReader />
     </div>
   );
 }

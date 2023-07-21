@@ -1,10 +1,10 @@
 import React from 'react';
-import UFOcards from '../../components/subForumCards/UFOcards';
+import SignupForm from '../../components/login-signup/SignupForm';
 
 function Dannytest() {
   return (
     <div>
-      <UFOcards/>
+      <SignupForm/>
     </div>
   )
 }

@@ -8,20 +8,13 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import "./App.css";
-import Footer from "./components/footer/Footer";
-import UFOsubforum from "./pages/UFOsubforum";
+import Footer from "./components/Footer";
+// import UFOsubTable from "./components/UFOsubTable";
 import Homepage from "./pages/Homepage";
-import Signup from "./pages/Signup";
-import Navbar from "./components/navbar/Navbar"
-import SinglePostReader from "./pages/SinglePostReader";
-
-// test component pages
-import Vincenttest from "./pages/testpages/Vincenttest";
-import Joshtest from "./pages/testpages/Joshtest";
-import Jackietest from "./pages/testpages/Jackietest";
-import Dannytest from "./pages/testpages/Dannytest";
-import Matttest from "./pages/testpages/Matttest";
-import Lindseytest from "./pages/testpages/Lindseytest";
+import SignupForm from "./pages/SignupForm";
+import LoginForm from "./components/LoginForm";
+import Navbar from "./components/Navbar"
+// import SinglePostReader from "./pages/SinglePostReader"
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -55,15 +48,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
-          <Route path="/signup" element={<Signup />} />
-
-          {/* testing routes only; remove on full deployment */}
-          <Route path="/vincenttest" element={<Vincenttest />} />
-          <Route path="/joshtest" element={<Joshtest />} />
-          <Route path="/jackietest" element={<Jackietest />} />
-          <Route path="/dannytest" element={<Dannytest />} />
-          <Route path="/matttest" element={<Matttest />} />
-          <Route path="/lindseytest" element={<Lindseytest />} />
+          <Route path="/signup" element={<SignupForm />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
       </Router>
       <Footer />

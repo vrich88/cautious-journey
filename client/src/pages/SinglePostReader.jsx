@@ -1,13 +1,10 @@
 import React from 'react';
 import CommentCard from '../comments/CommentCard';
 import {
-  ChakraProvider,
   Box,
   Flex,
   Heading,
   Text,
-  Avatar,
-  Badge,
   Divider,
   Center,
   Stack,

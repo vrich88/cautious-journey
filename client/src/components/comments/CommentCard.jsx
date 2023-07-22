@@ -15,10 +15,10 @@ const CommentCard = () => {
     <>
       {/* add mapping logic for comment arrays */}
       <Flex
-        bg="#edf3f8"
-        _dark={{ bg: "#3e3e3e" }}
+        // bg="#edf3f8"
+        // _dark={{ bg: "#3e3e3e" }}
         p={20}
-        w="full"
+        w="6xl"
         alignItems="center"
         justifyContent="center"
       >
@@ -27,10 +27,10 @@ const CommentCard = () => {
           px={5}
           py={5}
           rounded="lg"
-          shadow="lg"
-          bg="white"
+          // shadow="lg"
+          // bg=""
           _dark={{ bg: "gray.800" }}
-          maxW="2xl"
+          maxW= "12xl"
         >
           <VStack spacing={{ base: 10, md: 0 }} gridRowGap={{ md: "1rem" }}>
             {/* individual comment */}
@@ -42,7 +42,7 @@ const CommentCard = () => {
               shadow="lg"
               bg="white"
               _dark={{ bg: "gray.800" }}
-              maxW="2xl"
+              maxW="12xl"
             >
               <Flex justifyContent="space-between" alignItems="center">
                 <chakra.span
@@ -86,7 +86,7 @@ const CommentCard = () => {
               shadow="lg"
               bg="white"
               _dark={{ bg: "gray.800" }}
-              maxW="2xl"
+              maxW="6xl"
             >
               <Flex justifyContent="space-between" alignItems="center">
                 <chakra.span
@@ -127,7 +127,7 @@ const CommentCard = () => {
               shadow="lg"
               bg="white"
               _dark={{ bg: "gray.800" }}
-              maxW="2xl"
+              maxW="6xl"
             >
               <Flex justifyContent="space-between" alignItems="center">
                 <chakra.span

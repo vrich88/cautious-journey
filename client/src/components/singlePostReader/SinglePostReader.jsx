@@ -32,7 +32,7 @@ function SinglePostReader() {
         shadow="lg"
         bg="white"
         _dark={{ bg: "gray.800" }}
-        maxW="2xl"
+        maxW="12xl"
 
         borderTopLeftRadius={"6px"}
 borderTopRightRadius={"3px"}
@@ -51,12 +51,6 @@ bgGradient="linear(to-t, rgb(200 162 112), tan, tan)"
           borderRadius="md"
           alignItems="center"
         >
-          <Avatar
-            size="md"
-            name="John Doe"
-            src="https://bit.ly/broken-link"
-            mr={4}
-          />
           <Box>
             <Text fontSize="xl" fontWeight="bold">
               John Doe

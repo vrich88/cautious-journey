@@ -1,44 +1,19 @@
+import React from "react";
 import {
-  Avatar,
   Box,
-  Collapse,
-  Drawer,
-  DrawerContent,
-  DrawerOverlay,
   Flex,
   Button,
-  ButtonGroup,
-  Icon,
-  IconButton,
-  Input,
-  InputGroup,
-  InputLeftElement,
   Text,
-  useColorModeValue,
-  useDisclosure,
-  Center,
-  Square,
-  Container,
-  Grid,
-  GridItem,
-  Spacer,
   Tabs,
   TabList,
   Tab,
   TabPanels,
   TabPanel,
   TabIndicator,
-  Show,
   Hide,
-  Image,
+  Link,
 } from "@chakra-ui/react";
-import { FaBell, FaClipboardCheck, FaRss } from "react-icons/fa";
-import { AiFillGift } from "react-icons/ai";
-import { BsGearFill } from "react-icons/bs";
-import { FiMenu, FiSearch } from "react-icons/fi";
-import { HiCode, HiCollection } from "react-icons/hi";
-import { MdHome, MdKeyboardArrowRight } from "react-icons/md";
-import React from "react";
+
 import { plastic, Cgif } from "../assets/data/data.js"
 const breakpoints = {
   sm: "320px",
@@ -91,11 +66,11 @@ export default function Homepage() {
             >
               <Flex justifyContent={"space-between"} pt="0.4rem" px="0.4rem">
                 <Button colorScheme="gray" size="sm">
-                  Login
+                  <Link href = "/login">Login</Link>
                 </Button>
 
                 <Button colorScheme="gray" size="sm">
-                  Sign-Up
+                  <Link href = "/signup">Sign-Up</Link>
                 </Button>
               </Flex>
 

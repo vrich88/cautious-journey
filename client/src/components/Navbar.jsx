@@ -9,7 +9,6 @@ import {
   IconButton,
   Link,
   Spacer,
-  Stack,
   SimpleGrid,
   VStack,
   useColorMode,
@@ -20,7 +19,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { AiFillHome, AiOutlineInbox, AiOutlineMenu } from "react-icons/ai";
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
-import alien from "../../images/alien.png"
+import alien from "../assets/images/alien.png";
 
 const Navbar = () => {
   const bg = useColorModeValue("white", "gray.800");
@@ -34,11 +33,11 @@ const Navbar = () => {
   // Text color
   const tcl = useColorModeValue("black", "gray.50");
   const dcl = useColorModeValue("black", "gray.50");
-  const hbgh = useColorModeValue("black", "brand.500");
+  // const hbgh = useColorModeValue("black", "brand.500");
 
   const Section = (props) => {
     return (
-      <Link
+      <Flex
         m={-3}
         p={3}
         display="flex"
@@ -70,7 +69,7 @@ const Navbar = () => {
             {props.children}
           </chakra.p>
         </Box>
-      </Link>
+      </Flex>
     );
   };
 
@@ -280,9 +279,9 @@ const Navbar = () => {
           <Spacer />
           <Box display="flex" alignItems="center">
             <HStack spacing={1}>
-              <Button colorScheme="brand" variant="ghost" size="sm">
-                Sign in
-              </Button>
+              {/* <Button colorScheme="brand" variant="ghost" size="sm">
+                <Link href = "/login">Login</Link>
+              </Button> */}
               <Button colorScheme="brand" variant="solid" size="sm">
                 Sign up
               </Button>

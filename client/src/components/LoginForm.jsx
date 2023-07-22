@@ -38,8 +38,8 @@ const LoginForm = () => {
         <Input
           type="username"
           placeholder="Enter your username"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          // value={email}
+          // onChange={(e) => setEmail(e.target.value)}
         />
       </FormControl>
       <FormControl id="password" marginBottom="5">

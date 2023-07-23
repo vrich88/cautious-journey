@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Image, Link, chakra } from "@chakra-ui/react";
-import UFOseeds from "../assets/data/UFOseeds";
-
+// import UFOseeds from "../assets/data/UFOseeds";
+import { useQuery } from "@apollo/client";
 
 const UFOcards = () => {
   return (

@@ -279,11 +279,11 @@ const Navbar = () => {
           <Spacer />
           <Box display="flex" alignItems="center">
             <HStack spacing={1}>
-              {/* <Button colorScheme="brand" variant="ghost" size="sm">
+              <Button colorScheme="brand" variant="ghost" size="sm">
                 <Link href = "/login">Login</Link>
-              </Button> */}
+              </Button>
               <Button colorScheme="brand" variant="solid" size="sm">
-                Sign up
+                Log Out
               </Button>
             </HStack>
             <IconButton

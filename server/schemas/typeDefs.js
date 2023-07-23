@@ -19,7 +19,6 @@ const typeDefs = gql`
         title: String!
         tags: String
         body: String!
-        timePosted: String
         comments: [Comment]
     }
 
@@ -27,12 +26,10 @@ const typeDefs = gql`
         _id: ID!
         user: User
         body: String
-        timePosted: String
     }
 
     type Tag {
         name: String
-        used: Int
     }
 
     type Auth {
@@ -45,13 +42,11 @@ const typeDefs = gql`
         title: String!
         tags: String
         body: String!
-        timePosted: String
     }
 
     input CommentInput {
         _id: ID!
         comment: String
-        timePosted: String
     }
 
     type Query {

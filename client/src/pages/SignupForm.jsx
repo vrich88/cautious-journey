@@ -25,7 +25,7 @@ export default function SignupForm() {
     password: "",
   });
 
-  const [validated] = useState(false);
+  // const [validated] = useState(false);
 
   const [showAlert, setShowAlert] = useState(false);
 

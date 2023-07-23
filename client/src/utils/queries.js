@@ -16,10 +16,9 @@ export const QUERY_POST = gql`
     post {
       _id
       title
-      tags
+      tag
       body
-      user
-      timePosted
+      comments
     }
   }
 `;

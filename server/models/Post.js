@@ -39,10 +39,10 @@ const postSchema = new Schema({
   //   ref: "User",
   //   default: [],
   // },
-  timePosted: {
-    type: Date,
-    default: Date.now,
-  },
+  // timePosted: {
+  //   type: Date,
+  //   default: Date.now,
+  // },
   tag: {tagSchema}
 });
 

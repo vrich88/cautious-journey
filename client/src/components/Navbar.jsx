@@ -43,7 +43,7 @@ const Navbar = () => {
         display="flex"
         alignItems="start"
         rounded="lg"
-        bg= "white"
+        bg="white"
         _hover={{
           bg: hbg,
         }}
@@ -134,9 +134,9 @@ const Navbar = () => {
           We can't promise security, but we know a guy who can fight.
         </Section>
 
-        
+
       </SimpleGrid>
-      
+
     </React.Fragment>
   );
   const MobileNavContent = (
@@ -192,7 +192,7 @@ const Navbar = () => {
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Link display="flex" alignItems="center" href="/">
             {/* Replace with your logo */}
-            <chakra.img boxSize="50px" src={ alien } alt="Logo" />
+            <chakra.img boxSize="50px" src={alien} alt="Logo" />
           </Link>
           <Box
             display={{

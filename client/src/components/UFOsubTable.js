@@ -13,9 +13,9 @@ import {
 } from "@chakra-ui/react";
 
 const Choc = () => {
-  const header = ["name", "created",  "author"];
+  const header = ["name", "created", "author"];
   const data = [
-    { name: "Daggy", created: "7 days ago"},
+    { name: "Daggy", created: "7 days ago" },
     { name: "Anubra", created: "23 hours ago" },
     { name: "Josef", created: "A few seconds ago" },
     { name: "Sage", created: "A few hours ago" },

@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-// does user need to be destructured anywhere
+// we need to work on mutations
 
 export const CREATE_USER = gql`
   mutation createUser($username: String!, $email: String!, $password: String!) {

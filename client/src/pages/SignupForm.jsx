@@ -107,7 +107,7 @@ export default function SignupForm() {
           </chakra.p>
         </GridItem>
         <GridItem colSpan={{ base: "auto", md: 4 }}>
-          <Box as="form" mb={6} rounded="lg" shadow="xl" bg={["white"]} noValidate validated={validated} onSubmit={handleFormSubmit}>
+          <Box as="form" mb={6} rounded="lg" shadow="xl" bg={["white"]} >
             <Center pb={0} color="Black" _dark={{ color: "white" }}>
               <chakra.p pt={2}>Start tuning in now</chakra.p>
             </Center>
@@ -122,7 +122,7 @@ export default function SignupForm() {
               _dark={{ color: "gray.700" }}
             >
               <Flex>
-                <FormControl>
+                <FormControl noValidate /*validated={validated}*/ onSubmit={handleFormSubmit}>
                   <VisuallyHidden>User Name</VisuallyHidden>
                   <Input
                     mt={0}
@@ -131,12 +131,12 @@ export default function SignupForm() {
                     onChange={handleInputChange}
                     name="username"
                     value={userFormData.username}
-                    required
+                    isRequired
                   />
                 </FormControl>
               </Flex>
               <Flex>
-                <FormControl>
+                <FormControl /*validated={validated}*/ onSubmit={handleFormSubmit}>
                   <VisuallyHidden>Email Address</VisuallyHidden>
                   <Input
                     mt={0}
@@ -145,12 +145,12 @@ export default function SignupForm() {
                     onChange={handleInputChange}
                     name="email"
                     value={userFormData.email}
-                    required
+                    isRequired
                   />
                 </FormControl>
-              </Flex>
+                </Flex>
               <Flex>
-                <FormControl>
+                <FormControl /*validated={validated}*/ onSubmit={handleFormSubmit}>
                   <VisuallyHidden>Password</VisuallyHidden>
                   <Input
                     mt={0}
@@ -159,7 +159,7 @@ export default function SignupForm() {
                     onChange={handleInputChange}
                     name="password"
                     value={userFormData.password}
-                    required
+                    isRequired
                   />
                 </FormControl>
               </Flex>

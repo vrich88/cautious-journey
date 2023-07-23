@@ -30,7 +30,7 @@ const CommentCard = () => {
           // shadow="lg"
           // bg=""
           _dark={{ bg: "gray.800" }}
-          maxW= "12xl"
+          maxW="12xl"
         >
           <VStack spacing={{ base: 10, md: 0 }} gridRowGap={{ md: "1rem" }}>
             {/* individual comment */}

@@ -2,7 +2,7 @@ const { gql } = require("apollo-server-express");
 
 // do all args/model props need to be in mutations
 // what should return type be for post mutations
-// is time a string
+// is timePosted a string
 
 const typeDefs = gql`
     type User {
@@ -10,6 +10,8 @@ const typeDefs = gql`
         username: String!
         email: String
         password: String!
+        posts: [Post]
+
     }
 
     type Post {
@@ -17,24 +19,20 @@ const typeDefs = gql`
         title: String!
         tags: String
         body: String!
-        user: User
-        views: Number
-        votes: Number
-        time: Date
+        timePosted: String
         comments: [Comment]
     }
 
     type Comment {
         _id: ID!
-        post: Post
+        user: User
         body: String
-        votes: Number
-        time: Date
+        timePosted: String
     }
 
     type Tag {
         name: String
-        used: Number
+        used: Int
     }
 
     type Auth {
@@ -42,23 +40,18 @@ const typeDefs = gql`
         user: User
     }
 
-    type PostInput {
+    input PostInput {
         _id: ID!
         title: String!
         tags: String
         body: String!
-        user: User
-        views: Number
-        votes: Number
-        time: Date
+        timePosted: String
     }
 
-    type CommentInput {
+    input CommentInput {
         _id: ID!
-        post: String
         comment: String
-        votes: Number
-        time: Date
+        timePosted: String
     }
 
     type Query {
@@ -69,10 +62,10 @@ const typeDefs = gql`
     type Mutation {
         createUser(username: String!, email: String!, password: String!): Auth
         login(username: String!, password: String!): Auth
-        createPost(postData: PostInput!): User
-        deletePost(_id: ID!): User
-        createComment(commentData: CommentInput!): User
-        deleteComment(_id: ID!): User
+        createPost(postData: PostInput!): Post
+        deletePost(_id: ID!): Post
+        createComment(commentData: CommentInput!): Comment
+        deleteComment(_id: ID!): Comment
     }
 `;
 module.exports = typeDefs;

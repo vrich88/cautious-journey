@@ -33,7 +33,7 @@ const UFOcards = () => {
             color="gray.600"
             _dark={{ color: "gray.400" }}
           >
-            {UFOseed.time}
+            {UFOseed.timePosted}
           </chakra.span>
           <chakra.span
             fontSize="sm"

@@ -19,14 +19,24 @@ const userSchema = new Schema({
     type: String,
     required: true,
     // make sure this works
-    validate: {
-      is: [/"^(?=.[a-z])(?=.[A-Z])(?=.d)(?=.[@$!%?&])[A-Za-zd@$!%?&]{8,}$"/],
-    },
+    match: [/"^(?=.[a-z])(?=.[A-Z])(?=.d)(?=.[@$!%?&])[A-Za-zd@$!%?&]{8,}$"/],
   },
   isAdmin: {
     type: Boolean,
     default: false,
   },
+  // comments: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Comment"
+  //   }
+  // ],
+  posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Post"
+    }
+  ]
 });
 
 // hash user password

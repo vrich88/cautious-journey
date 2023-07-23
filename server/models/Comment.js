@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-const { User } = require("./User");
 
 // how set up relationship with parents post
 // how set up relationship with commenting user
@@ -7,29 +6,28 @@ const { User } = require("./User");
 // how are these upvotes working
 // how is the date stuff working
 
-const commentSchema = new mongoose.Schema({
-  post: {
-    type: mongoose.Schema.ObjectId,
-    ref: "Post",
-    required: true,
-  },
+const commentSchema = new Schema({
+  // post: {
+  //   type: Schema.ObjectId,
+  //   ref: "Post",
+  //   required: true,
+  // },
   body: {
     type: String,
     required: true,
-    minLength: 1,
-    maxLength: 2500,
+    minlength: 1,
+    maxlength: 2500,
   },
   user: {
-    type: mongoose.Schema.ObjectId,
+    type: Schema.ObjectId,
     ref: "User",
     required: true,
   },
-  votes: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: "User",
-    default: [],
-  },
-  time: {
+  // votes: [{
+  //   type: Schema.ObjectId,
+  //   ref: "User",
+  // }],
+  timePosted: {
     type: Date,
     default: Date.now,
   },

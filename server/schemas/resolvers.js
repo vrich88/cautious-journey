@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Post } = require("../models");
+const { User, Post, Comment } = require("../models");
 const { signToken } = require("../utils/auth");
 
 // where are args coming from
@@ -41,7 +41,7 @@ const resolvers = {
     },
     createPost: async (parent, args, context) => {
       if (context.user) {
-        const newPost = await Post.create(args);
+        const newPost = await Post.create(args.postData);
         return newPost;
       }
       throw new AuthenticationError("Only those in the know can do that");
@@ -49,28 +49,27 @@ const resolvers = {
 
     deletePost: async (parent, args, context) => {
       if (context.user) {
-        const updatedDB = await db.collection.findOneAndDelete(args);
-        return updatedDB;
+        const post = await Post.findOneAndDelete(args);
+        return post;
       }
       throw new AuthenticationError("The truth is out there");
     },
-  },
-  createComment: async (parent, args, context) => {
-    if (context.user) {
-      const newComment = await Comment.create(args);
-      return newComment;
-    }
-    throw new AuthenticationError("Only those in the know can do that");
-  },
+    createComment: async (parent, args, context) => {
+      if (context.user) {
+        const newComment = await Comment.create(args.commentData);
+        return newComment;
+      }
+      throw new AuthenticationError("Only those in the know can do that");
+    },
 
-  deleteComment: async (parent, args, context) => {
-    if (context.user) {
-      const updatedDB = await db.collection.findOneAndDelete(args);
-      return updatedDB;
-    }
-    throw new AuthenticationError("The truth is out there");
-  },
-};
-
+      deleteComment: async (parent, args, context) => {
+        if (context.user) {
+          const comment = await Comment.findOneAndDelete({_id: args._id});
+          return comment;
+        }
+        throw new AuthenticationError("The truth is out there");
+      },
+  }
+}
 
 module.exports = resolvers;

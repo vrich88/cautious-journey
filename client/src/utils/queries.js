@@ -19,9 +19,7 @@ export const QUERY_POST = gql`
       tags
       body
       user
-      views
-      votes
-      time
+      timePosted
     }
   }
 `;

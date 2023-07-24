@@ -20,6 +20,7 @@ import { AiFillHome, AiOutlineInbox, AiOutlineMenu } from "react-icons/ai";
 import { BsFillCameraVideoFill } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import alien from "../assets/images/alien.png";
+import Auth from "../utils/auth";
 
 const Navbar = () => {
   const bg = useColorModeValue("white", "gray.800");
@@ -289,7 +290,7 @@ const Navbar = () => {
                 <Link href="/login">Login</Link>
               </Button>
               <Button variant="solid" size="sm">
-                <Link href="/">Log Out</Link>
+                <Link onClick={Auth.logout} to="/">Logout</Link>
               </Button>
             </HStack>
             <IconButton

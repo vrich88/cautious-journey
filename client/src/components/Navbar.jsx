@@ -242,7 +242,9 @@ const Navbar = () => {
                   boxShadow: "none",
                 }}
               >
-                UFO's
+                <Link to="ufos">
+                  UFO's
+                </Link>
               </Button>
               <Button
                 bg={bg}
@@ -257,7 +259,9 @@ const Navbar = () => {
                   boxShadow: "none",
                 }}
               >
-                Cryptid's
+                <Link to="/cryptids">
+                  Cryptid's
+                </Link>
               </Button>
               <Button
                 bg={bg}
@@ -272,7 +276,9 @@ const Navbar = () => {
                   boxShadow: "none",
                 }}
               >
+                <Link to="/others">
                 The Other's
+                </Link>
               </Button>
             </HStack>
           </Box>
@@ -280,10 +286,10 @@ const Navbar = () => {
           <Box display="flex" alignItems="center">
             <HStack spacing={1}>
               <Button colorScheme="brand" variant="ghost" size="sm">
-                <Link href = "/login">Login</Link>
+                <Link href="/login">Login</Link>
               </Button>
-              <Button colorScheme="brand" variant="solid" size="sm">
-                Log Out
+              <Button variant="solid" size="sm">
+                <Link href="/">Log Out</Link>
               </Button>
             </HStack>
             <IconButton

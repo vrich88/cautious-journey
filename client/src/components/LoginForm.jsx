@@ -64,7 +64,7 @@ const LoginForm = () => {
   // housing here
   return (
     <Flex>
-      <Box display="flex" justifyContent="flex-start" m={6}>
+      <Box display="flex" justifyContent="flex-start" m={6} bg={["black"]}>
         <Box
           maxWidth="sm"
           margin="0 auto"
@@ -74,10 +74,11 @@ const LoginForm = () => {
           boxShadow="md"
         >
 
-          <Heading size="lg" marginBottom="9">Login</Heading>
-          <FormControl id="username" marginBottom="4">
+          <Heading size="lg" marginBottom="9" color="primary.900">Login</Heading>
+          <FormControl id="username" marginBottom="4" color="primary.900">
             <FormLabel>User Name</FormLabel>
             <Input
+            
               type="text"
               placeholder="Enter your username"
               name="username"
@@ -85,7 +86,7 @@ const LoginForm = () => {
               onChange={handleInput}
             />
           </FormControl>
-          <FormControl id="password" marginBottom="5">
+          <FormControl id="password" marginBottom="5" color="primary.900">
             <FormLabel>Password</FormLabel>
             <Input
               type="password"

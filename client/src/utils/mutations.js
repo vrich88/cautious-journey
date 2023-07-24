@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-// does user need to be destructured anywhere
+// we need to work on mutations
 
 export const CREATE_USER = gql`
   mutation createUser($username: String!, $email: String!, $password: String!) {
@@ -14,32 +14,29 @@ export const CREATE_USER = gql`
   }
 `;
 
-// export const LOGIN_USER = gql`
-//   mutation login($username: String!, $password: String!) {
-//     login(username: $username, password: $password) {
-//       token
-//       user {
-//         _id
-//         username
-//       }
-//     }
-//   }
-// `;
+export const LOGIN_USER = gql`
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
+    }
+  }
+`;
 
-// export const CREATE_POST = gql`
-//   mutation createPost($postData: PostInput!) {
-//     createPost(postData: $postData) {
-//       _id
-//       title
-//       tags
-//       body
-//       user
-//       views
-//       votes
-//       time
-//     }
-//   }
-// `;
+export const CREATE_POST = gql`
+  mutation createPost($postData: PostInput!) {
+    createPost(postData: $postData) {
+      _id
+      title
+      tag
+      body
+      comments
+    }
+  }
+`;
 
 // export const DELETE_POST = gql`
 //   mutation deletePost($_id: ID!) {
@@ -57,18 +54,15 @@ export const CREATE_USER = gql`
 //   }
 // `;
 
-// export const CREATE_COMMENT = gql`
-//   mutation createComment($commentData: CommentInput!) {
-//     createComment(commentData: $commentData) {
-//       _id
-//       user
-//       post
-//       body
-//       votes
-//       time
-//     }
-//   }
-// `;
+export const CREATE_COMMENT = gql`
+  mutation createComment($commentData: CommentInput!) {
+    createComment(commentData: $commentData) {
+      _id
+      post
+      body
+    }
+  }
+`;
 
 // export const DELETE_COMMENT = gql`
 //   mutation deleteComment($_id: ID!) {

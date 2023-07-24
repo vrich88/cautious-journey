@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Flex, Image, Button, Input, Link, chakra, Slider, SliderTrack } from "@chakra-ui/react";
 
 const CreateComment = () => {
-    const [comment, setComment] = useState('');
+  const [comment, setComment] = useState('');
 
   const handleInputChange = (event) => {
     setComment(event.target.value);
@@ -17,8 +17,8 @@ const CreateComment = () => {
 
   return (
     <Flex
-    //   bg="#edf3f8"
-    //   _dark={{ bg: "#3e3e3e" }}
+      //   bg="#edf3f8"
+      //   _dark={{ bg: "#3e3e3e" }}
       pt={5}
       w="full"
       h="full"
@@ -34,26 +34,26 @@ const CreateComment = () => {
         bg="white"
         _dark={{ bg: "gray.800" }}
       >
-    <Box display="flex" alignItems="center" w="40rem">
-      <Input
-        flexWrap={"wrap"}
-        flex="1"
-        mr={2}
-        size="md" // Set the size to large for a bigger input field
-        placeholder="Enter your comment..."
-        value={comment}
-        onChange={handleInputChange}
-      />
-      <Button colorScheme="teal" onClick={handleSubmit}>
-        Submit
-      </Button>
-    </Box>
-    </Box>
+        <Box display="flex" alignItems="center" w="40rem">
+          <Input
+            flexWrap={"wrap"}
+            flex="1"
+            mr={2}
+            size="md" // Set the size to large for a bigger input field
+            placeholder="Enter your comment..."
+            value={comment}
+            onChange={handleInputChange}
+          />
+          <Button colorScheme="teal" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </Box>
+      </Box>
     </Flex>
   );
 };
-      
-      
+
+
 
 
 export default CreateComment;

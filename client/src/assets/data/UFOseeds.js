@@ -6,12 +6,9 @@ const UFOseeds = [
      time: "April 14, 2022",
      content: "Discover the intriguing world of UFO sightings and alleged encounters with extraterrestrial beings. Explore the evidence, theories, and scientific skepticism surrounding these enigmatic claims. Are we truly not alone?",
      commentA: "The search for extraterrestrial intelligence (SETI) is an ongoing scientific effort to detect signals or communication from intelligent alien civilizations.",
-     commentB: "The Drake Equation, proposed by astronomer Frank Drake, is a formula used to estimate the potential number of communicative civilizations in our galaxy."
+     commentB: "The Drake Equation, proposed by astronomer Frank Drake, is a formula used to estimate the potential number of communicative civilizations in our galaxy."     
   },
   {
-    id: 2,
-    title: "Exoplanets: The Hunt for Alien Worlds",
-    user: "222",
     time: "April 15, 2022",
     content: "Unearth the revolutionary discoveries of exoplanets beyond our solar system. Unveil how astronomers utilize cutting-edge technology to detect these distant worlds and assess their potential for harboring alien life.",
     commentA: "Some scientists believe that if extraterrestrial civilizations exist, they may be far more advanced than us and potentially capable of interstellar travel.",
@@ -46,6 +43,7 @@ commentB: "Various government and military agencies worldwide have investigated 
   commentB: "The discovery of even simple microbial life on another celestial body, such as Mars or one of Jupiter's moons, would have profound implications for our understanding of the universe and the potential for life beyond Earth.",
   commentC: "The study of extremophiles, organisms that can survive in extreme environments on Earth, has led some scientists to speculate that similar life forms might exist on other planets with harsh conditions."
 }
+
 ]
 
 // if anyone/everyone wants to finish out the cryptids and others, I've got the info for it

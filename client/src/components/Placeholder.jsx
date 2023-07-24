@@ -1,7 +1,7 @@
 import React from "react";
 import { chakra, Box, Flex, Icon, Stack } from "@chakra-ui/react";
 
-export default function App() {
+export default function Placeholder() {
   const Feature = (props) => {
     return (
       <Flex>

@@ -8,16 +8,20 @@ const typeDefs = gql`
     type User {
         _id: ID!
         username: String!
-        email: String
+        email: String!
         password: String!
-        posts: [Post]
 
+    }
+
+    type Auth {
+      token: ID!
+      user: User
     }
 
     type Post {
         _id: ID!
         title: String!
-        tags: String
+        tag: String
         body: String!
         comments: [Comment]
     }
@@ -32,15 +36,11 @@ const typeDefs = gql`
         name: String
     }
 
-    type Auth {
-        token: ID!
-        user: User
-    }
 
     input PostInput {
         _id: ID!
         title: String!
-        tags: String
+        tag: String
         body: String!
     }
 
@@ -50,7 +50,8 @@ const typeDefs = gql`
     }
 
     type Query {
-        user: User
+        users: [User]
+        singleUser: User
         post: Post
     }
 

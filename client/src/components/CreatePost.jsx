@@ -1,6 +1,18 @@
-import React, { useState } from "react";
-import { Box, Flex, Image, Button, Input, Link, chakra, Slider, SliderTrack } from "@chakra-ui/react";
-
+import React, { useState, useEffect } from "react";
+import {
+  chakra,
+  Alert,
+  FormControl,
+  Divider,
+  Box,
+  GridItem,
+  Button,
+  Center,
+  Flex,
+  SimpleGrid,
+  VisuallyHidden,
+  Input,
+} from "@chakra-ui/react";
 import { useMutation } from "@apollo/client";
 import { CREATE_POST } from "../utils/mutations";
 // import Auth from "../utils/auth";
@@ -57,7 +69,6 @@ export default function CreatePost() {
       title: "",
       body: "",
       comments: [],
-      timePosted: "",
       tag: {},
     });
   };
@@ -98,7 +109,7 @@ export default function CreatePost() {
               _dark={{ color: "gray.700" }}
             >
               <Flex>
-                <FormControl noValidate /*validated={validated}*/ onSubmit={handleFormSubmit}>
+                <FormControl noValidate /*validated={validated}*/ onSubmit={handleSubmit}>
                   <VisuallyHidden>Title</VisuallyHidden>
                   <Input
                     mt={0}
@@ -112,7 +123,7 @@ export default function CreatePost() {
                 </FormControl>
               </Flex>
               <Flex>
-                <FormControl /*validated={validated}*/ onSubmit={handleFormSubmit}>
+                <FormControl /*validated={validated}*/ onSubmit={handleSubmit}>
                   <VisuallyHidden>Post Body</VisuallyHidden>
                   <Input
                     mt={0}
@@ -126,7 +137,7 @@ export default function CreatePost() {
                 </FormControl>
               </Flex>
               <Flex>
-                <FormControl /*validated={validated}*/ onSubmit={handleFormSubmit}>
+                <FormControl /*validated={validated}*/ onSubmit={handleSubmit}>
                   <VisuallyHidden
                     onChange={handleInputChange}
                     name="tag"
@@ -138,7 +149,7 @@ export default function CreatePost() {
               </Flex>
 
               {/* <Flex>
-                <FormControl  validated={validated} onSubmit={handleFormSubmit}>
+                <FormControl  validated={validated} onSubmit={handleSubmit}>
                   <VisuallyHidden
                     onChange={handleInputChange}
                     name="tag"
@@ -158,14 +169,15 @@ export default function CreatePost() {
                 bg={["primary.900"]}
                 disabled={
                   !(
-                    userFormData.username &&
-                    userFormData.email &&
-                    userFormData.password
+                    postData.title &&
+                    postData.body &&
+                    postData.tag &&
+                    postData.comments
                   )
                 }
                 variant="success"
               >
-                Take the Red Pill
+                SAY YOUR PIECE
               </Button>
             </Flex>
           </Box>

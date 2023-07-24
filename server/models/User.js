@@ -7,36 +7,35 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
-    trim: true,
   },
   email: {
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.+..+/, "Must be a valid email address"],
+    // match: [/.+@.+..+/, "Must be a valid email address"],
   },
   password: {
     type: String,
     required: true,
     // make sure this works
-    match: [/"^(?=.[a-z])(?=.[A-Z])(?=.d)(?=.[@$!%?&])[A-Za-zd@$!%?&]{8,}$"/],
+    // match: [/"^(?=.[a-z])(?=.[A-Z])(?=.d)(?=.[@$!%?&])[A-Za-zd@$!%?&]{8,}$"/],
   },
-  isAdmin: {
-    type: Boolean,
-    default: false,
-  },
+  // isAdmin: {
+  //   type: Boolean,
+  //   default: false,
+  // },
   // comments: [
   //   {
   //     type: Schema.Types.ObjectId,
   //     ref: "Comment"
   //   }
   // ],
-  posts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Post"
-    }
-  ]
+  // posts: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Post"
+  //   }
+  // ]
 });
 
 // hash user password

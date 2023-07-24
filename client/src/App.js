@@ -9,11 +9,11 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import "./App.css";
 import Footer from "./components/Footer";
-// import UFOsubTable from "./components/UFOsubTable";
 import Homepage from "./pages/Homepage";
 import SignupForm from "./pages/SignupForm";
 import LoginForm from "./components/LoginForm";
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
+import UFOsubForum from "./pages/UFOsubForum"
 // import SinglePostReader from "./pages/SinglePostReader"
 
 // Construct our main GraphQL API endpoint
@@ -50,6 +50,7 @@ function App() {
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/ufo" element={<UFOsubForum />} />
         </Routes>
       </Router>
       <Footer />

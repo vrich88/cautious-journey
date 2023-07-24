@@ -6,7 +6,10 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    user: async (parent, args, context) => {
+    users: async () => {
+      return User.find();
+    },
+    singleUser: async (parent, args, context) => {
       const userData = await User.findOne({ _id: args._id }).select(
         "-password"
       );

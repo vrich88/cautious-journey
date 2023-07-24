@@ -1,11 +1,11 @@
 # Equinox
 
-MERN Stack
 React Forum
+Equinox is a full-stack MERN application that was designed and built collaboratively, then sent to deploy through Heroku. As the final project of our Web Development bootcamp, it is a symbol of the culmination of all skills taught and even more learned through trial and error. The task was to create a single-page application with a MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end which would implement user authentication with JWT to build a user-focused platform.
 
 ## Description
 
-Equinox is a forum for avid believers of the unexplained. Whether you've seen a UFO, the Moth Man, or had a real life encouter with a spirit, we believe you and your story is wanted.
+Equinox is a forum for avid believers of the unexplained. Whether you've seen a UFO, the Moth Man, or had a real life encouter with a spirit, we believe you and your story is wanted. Become a member to login, contribute to conversations, and discuss the truth with friends all over the world!
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ After arriving to the forum, sign up to become a member and then sign in to begi
 
 ## Credits
 
-**_Joshua Butts_** - Front End Developer Extrordinaire  - [https://github.com/JCB44](https://github.com/JCB44)
+**_Joshua Butts_** - Front End Developer Extrordinaire - [https://github.com/JCB44](https://github.com/JCB44)
 
 **_Matthew Montiel_** - Project Management, Front End Developer - [https://github.com/MatthewMontiel](https://github.com/MatthewMontiel)
 
@@ -35,22 +35,32 @@ After arriving to the forum, sign up to become a member and then sign in to begi
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+MIT License
+
+Copyright (c) 2023 Daja-limavijo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
+![MIT](https://img.shields.io/badge/license-MIT-yellowgreen.svg)
 
 ## Features
 
-If your project has a lot of features, list them here.
-
-## How to Contribute
-
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+Select from one of three sub-forums: UFO's, Cryptid's, and Other's

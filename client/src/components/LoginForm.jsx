@@ -64,14 +64,14 @@ const LoginForm = () => {
   // housing here
   return (
     <Flex>
-      <Box display="flex" justifyContent="flex-start" m={6} bg={["black"]}>
+      <Box display="flex" justifyContent="flex-start" m={0} bg={["black"]} w="full" h="90vh">
         <Box
           maxWidth="sm"
           margin="0 auto"
-          padding="8"
-          borderWidth="1px"
+          borderWidth="0px"
           borderRadius="md"
           boxShadow="md"
+          mt="10"
         >
 
           <Heading size="lg" marginBottom="9" color="primary.900">Login</Heading>
@@ -97,16 +97,15 @@ const LoginForm = () => {
             />
           </FormControl>
           <Button colorScheme="purple" onClick={handleLogin}>Login</Button>
-        </Box>
-      </Box>
-
-      <Box>
+          <Box color='white'>
         <h2> Not a member?</h2>
         <Button colorScheme="gray" size="sm">
           <Link href="/signup">Sign-Up</Link>
         </Button>
       </Box>
-
+          
+        </Box>
+      </Box>
     </Flex>
   );
 };

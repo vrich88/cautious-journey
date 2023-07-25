@@ -25,13 +25,14 @@ const breakpoints = {
 export default function Homepage() {
   // const mobileNav = useDisclosure();
   return (
-    <Box as="main" p="4" bg={["primary.800"]}>
+    <Box as="main" p="4" bg={["primary.800"]} h="90vh">
       <Flex>
         {/* Add content here, remove div below  /}
             <Box borderWidth="4px" borderStyle="dashed" rounded="md" h="96" />
           </Box>
           <Box as="main" p="4">
             {/ Add content here, remove div below  */}
+
         {/* Black device Container */}
         <Box
           borderWidth="0px"
@@ -40,7 +41,7 @@ export default function Homepage() {
           w={{ base: "700px", md: "300px", lg: "35%" }}
         >
           <Flex justifyContent={"center"}>
-            {/* Black device */}
+            {/* 2nd Black device Container */}
             <Box
               borderWidth="0px"
               borderColor={"white"}
@@ -48,21 +49,22 @@ export default function Homepage() {
               mt={"16"}
               h={{ base: "70vh", sm: "65vh", md: "70vh", xl: "60vh" }}
               w={{ base: "350px", md: "270px", lg: "20rem" }}
-
             >
+              {/* Black device */}
               <Box
                 borderWidth="0.5px"
                 borderColor={"blackAlpha.600"}
                 backgroundColor={"gray.900"}
                 mt={"5"}
-                h={{ base: "70vh", sm: "65vh", md: "70vh", xl: "60vh" }}
+                h={{ base: "65vh", sm: "65vh", md: "60vh", xl: "60vh" }}
                 w={{ base: "350px", md: "270px", lg: "20rem" }}
-                borderBottomRightRadius={120}
-                borderBottomLeftRadius={120}
+                borderBottomRightRadius={100}
+                borderBottomLeftRadius={100}
                 borderTopRightRadius={6}
                 borderTopLeftRadius={6}
                 backgroundImage={plastic.image}
                 boxShadow={"-5px -2px 20px black, -8px -4px 0px rgb(51 50 52), -3px -4px 0px rgb(51 50 52), -4px -6px 0px rgb(39 38 40), -10px -6px 0px rgb(39 38 40)"}
+                alt="Plastic background Texture"
               >
                 <Flex justifyContent={"space-between"} pt="0.4rem" px="0.4rem">
                   <Button colorScheme="gray" size="sm">
@@ -87,6 +89,7 @@ export default function Homepage() {
                     backgroundPosition="center"
                     backgroundRepeat="no-repeat"
                     backgroundSize={200}
+                    alt="Equinox background GIF"
 
                   >
                     {/* <Image src={Cgif.image} objectFit='cover'  borderRadius="full" w={{ base: "170px", md: "170px", lg: "170px" }} h="160px"/> */}
@@ -97,7 +100,8 @@ export default function Homepage() {
                 <Flex justifyContent={"center"}>
                   <Box
                     borderWidth="4px"
-                    borderColor={"gray"}
+                    boxShadow={"0px 0px 30px black"}
+                    borderColor={"gray.600"}
                     mt={"8"}
                     h={{ base: "200px", md: "200px", lg: "190px", xl: "200px" }}
                     w={{ base: "170px", md: "170px", lg: "170px" }}
@@ -106,13 +110,13 @@ export default function Homepage() {
                   >
                     <Flex flexDirection={"column"} flexWrap={"wrap"} alignContent={"space-between"}>
                       <Button colorScheme="gray" size="sm" w={"160px"} mt={4}>
-                        Dashboard
+                        View Posts
                       </Button>
+                      {/* <Button colorScheme="gray" size="sm" w={"160px"} mt={4}>
+                        Placeholder
+                      </Button> */}
                       <Button colorScheme="gray" size="sm" w={"160px"} mt={4}>
                         About
-                      </Button>
-                      <Button colorScheme="gray" size="sm" w={"160px"} mt={4}>
-                        Contact
                       </Button>
                     </Flex>
                   </Box>
@@ -132,6 +136,7 @@ export default function Homepage() {
           w={{ base: "0px", md: "20rem", lg: "65%" }}
         >
           <Flex justifyContent={"center"}>
+            {/* Folder Tabs Container */}
             <Box
               borderWidth="0px"
               borderColor={"white"}
@@ -182,7 +187,7 @@ export default function Homepage() {
                   >
                     <TabPanels>
                       <TabPanel>
-                        <p>one!</p>
+                        <p>Equinox is a forum for avid believers of the unexplained. Whether you've seen a UFO, the Moth Man, or had a real life encouter with a spirit, we believe you and your story is wanted. Become a member to login, contribute to conversations, and discuss the truth with friends all over the world!</p>
                       </TabPanel>
                       <TabPanel>
                         <p>two!</p>

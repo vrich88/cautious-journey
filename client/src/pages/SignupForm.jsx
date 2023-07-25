@@ -79,7 +79,7 @@ export default function SignupForm() {
 
   // bg = background color and everything below where its placed colors it
   return (
-    <Box px={8} py={24} mx="auto" bg={["black"]}>
+    <Box px={8} py={24} mx="auto" bg={["black"]} h={"90vh"}>
       <SimpleGrid
         alignItems="center"
         w={{ base: "full", xl: 11 / 12 }}

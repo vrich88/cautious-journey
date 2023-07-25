@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import { CREATE_POST} from "../utils/mutations";
+// import Auth from "../utils/auth";
+
 import {
   chakra,
   Alert,
   FormControl,
-  Divider,
   Box,
   GridItem,
   Button,
@@ -13,14 +16,11 @@ import {
   VisuallyHidden,
   Input,
 } from "@chakra-ui/react";
-import { useMutation } from "@apollo/client";
-import { CREATE_POST } from "../utils/mutations";
-// import Auth from "../utils/auth";
 
 export default function CreatePost() {
   const [postData, setPostData] = useState({
-    title: "",
-    body: ""
+    title: '',
+    body: '',
   });
 
   const [validated] = useState(false);
@@ -40,17 +40,19 @@ export default function CreatePost() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setPostData({ ...postData, [name]: value });
+    console.log(postData);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
+
+    console.log(postData.title, postData.body);
 
     try {
       const { data } = await createPost({
@@ -114,7 +116,7 @@ export default function CreatePost() {
             >
               <Flex>
                 <FormControl>
-                  <VisuallyHidden>Title</VisuallyHidden>
+                  {/* <VisuallyHidden>Title</VisuallyHidden> */}
                   <Input
                     mt={0}
                     type="text"
@@ -128,7 +130,7 @@ export default function CreatePost() {
               </Flex>
               <Flex>
                 <FormControl>
-                  <VisuallyHidden>Post Body</VisuallyHidden>
+                  {/* <VisuallyHidden>Post Body</VisuallyHidden> */}
                   <Input
                     mt={0}
                     type="text"

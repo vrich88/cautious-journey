@@ -67,13 +67,16 @@ export default function Homepage() {
                 alt="Plastic background Texture"
               >
                 <Flex justifyContent={"space-between"} pt="0.4rem" px="0.4rem">
-                  <Button colorScheme="gray" size="sm">
-                    <Link href="/login">Login</Link>
-                  </Button>
-
-                  <Button colorScheme="gray" size="sm">
-                    <Link href="/signup">Sign-Up</Link>
-                  </Button>
+                  <Link href="/login">
+                    <Button colorScheme="gray" size="sm">
+                      Login
+                    </Button>
+                  </Link>
+                  <Link href="/signup">
+                    <Button colorScheme="gray" size="sm">
+                      Sign-Up
+                    </Button>
+                  </Link>
                 </Flex>
 
                 <Flex justifyContent={"center"}>
@@ -153,15 +156,15 @@ export default function Homepage() {
                     <Tab mr="0px" borderTopLeftRadius={"10px"} borderTopRightRadius={"10px"}
                       w={{ base: "auto", md: "auto", lg: "400px" }}
                       h={{ base: "auto", md: "auto", lg: "auto" }}
-                    >One</Tab>
+                    >What We Believe</Tab>
                     <Tab borderTopLeftRadius={"10px"} borderTopRightRadius={"10px"}
                       w={{ base: "auto", md: "auto", lg: "400px" }}
                       h={{ base: "auto", md: "auto", lg: "auto" }}
-                    >Two</Tab>
+                    >Top Users</Tab>
                     <Tab borderTopLeftRadius={"10px"} borderTopRightRadius={"10px"}
                       w={{ base: "auto", md: "auto", lg: "400px" }}
                       h={{ base: "auto", md: "auto", lg: "auto" }}
-                    >Three</Tab>
+                    >Top Posts</Tab>
                   </TabList>
 
                   <TabIndicator
@@ -188,12 +191,13 @@ export default function Homepage() {
                     <TabPanels>
                       <TabPanel>
                         <p>Equinox is a forum for avid believers of the unexplained. Whether you've seen a UFO, the Moth Man, or had a real life encouter with a spirit, we believe you and your story is wanted. Become a member to login, contribute to conversations, and discuss the truth with friends all over the world!</p>
+
                       </TabPanel>
                       <TabPanel>
-                        <p>two!</p>
+                        <p>We will be showcasing the top 10 users on our site here and this will be updated in the future!</p>
                       </TabPanel>
                       <TabPanel>
-                        <p>three!</p>
+                        <p>The top posts that have the most likes and comments will display here and this will be updated regularly.</p>
                       </TabPanel>
                     </TabPanels>
                   </Box>

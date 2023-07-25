@@ -15,9 +15,12 @@ const resolvers = {
       );
       return userData;
     },
-    post: async (parent, args, context) => {
+    singlePost: async (parent, args, context) => {
       const postData = await Post.findOne({ _id: args._id });
       return postData;
+    },
+    posts: async () => {
+      return Post.find();
     },
   },
   Mutation: {
@@ -38,18 +41,18 @@ const resolvers = {
       if (!validPW) {
         throw new AuthenticationError("Username or Password incorrect");
       }
-
+      
       const token = signToken(user);
       return { token, user };
     },
-    createPost: async (parent, args, context) => {
-      if (context.user) {
-        const newPost = await Post.create(args.postData);
-        return newPost;
-      }
-      throw new AuthenticationError("Only those in the know can do that");
+    createPost: async (parent, args) => {
+      // if (context.user) {
+      // console.log({title, body})
+      const newPost = await Post.create(args);
+      return newPost;
+    // }
+    // throw new AuthenticationError("Only those in the know can do that");
     },
-
     deletePost: async (parent, args, context) => {
       if (context.user) {
         const post = await Post.findOneAndDelete(args);
@@ -64,14 +67,13 @@ const resolvers = {
       }
       throw new AuthenticationError("Only those in the know can do that");
     },
-
-      deleteComment: async (parent, args, context) => {
-        if (context.user) {
-          const comment = await Comment.findOneAndDelete({_id: args._id});
-          return comment;
-        }
-        throw new AuthenticationError("The truth is out there");
-      },
+    deleteComment: async (parent, args, context) => {
+      if (context.user) {
+        const comment = await Comment.findOneAndDelete({ _id: args._id });
+        return comment;
+      }
+      throw new AuthenticationError("The truth is out there");
+    },
   }
 }
 

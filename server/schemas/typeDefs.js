@@ -21,9 +21,7 @@ const typeDefs = gql`
     type Post {
         _id: ID!
         title: String!
-        tag: String
         body: String!
-        comments: [Comment]
     }
 
     type Comment {
@@ -36,14 +34,6 @@ const typeDefs = gql`
         name: String
     }
 
-
-    input PostInput {
-        _id: ID!
-        title: String!
-        tag: String
-        body: String!
-    }
-
     input CommentInput {
         _id: ID!
         comment: String
@@ -52,13 +42,14 @@ const typeDefs = gql`
     type Query {
         users: [User]
         singleUser: User
-        post: Post
+        singlePost: Post
+        posts: [Post]
     }
 
     type Mutation {
         createUser(username: String!, email: String!, password: String!): Auth
         login(username: String!, password: String!): Auth
-        createPost(postData: PostInput!): Post
+        createPost(title: String!, body: String!): Post
         deletePost(_id: ID!): Post
         createComment(commentData: CommentInput!): Comment
         deleteComment(_id: ID!): Comment

@@ -17,6 +17,17 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// testing has cannot Find
+// Serve up static assets
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static('client/build'));
+// }
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'client','build','index.html'));
+// })
+
+// this part works local host has cannot GET for routes
 // Serve up static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));

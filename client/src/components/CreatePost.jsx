@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import { CREATE_POST} from "../utils/mutations";
+// import Auth from "../utils/auth";
+
 import {
   chakra,
   Alert,
   FormControl,
-  Divider,
   Box,
   GridItem,
   Button,
@@ -13,20 +16,14 @@ import {
   VisuallyHidden,
   Input,
 } from "@chakra-ui/react";
-import { useMutation } from "@apollo/client";
-import { CREATE_POST } from "../utils/mutations";
-// import Auth from "../utils/auth";
 
 export default function CreatePost() {
   const [postData, setPostData] = useState({
-    title: "",
-    body: "",
-    comments: [],
-    timePosted: "",
-    tag: {},
+    title: '',
+    body: '',
   });
 
-  // const [validated] = useState(false);
+  const [validated] = useState(false);
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -43,24 +40,28 @@ export default function CreatePost() {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setPostData({ ...postData, [name]: value });
+    console.log(postData);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // check if form has everything (as per react-bootstrap docs)
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
       event.stopPropagation();
     }
 
+    console.log(postData.title, postData.body);
+
     try {
       const { data } = await createPost({
-        variables: { ...postData },
+        variables: {
+          title: postData.title,
+          body: postData.body,
+        },
       });
       console.log(data);
-      // Auth.login(data.createUser.token);
     } catch (err) {
       console.error(err);
     }
@@ -68,8 +69,8 @@ export default function CreatePost() {
     setPostData({
       title: "",
       body: "",
-      comments: [],
-      tag: {},
+      // comments: [],
+      // tag: {},
     });
   };
 
@@ -95,10 +96,15 @@ export default function CreatePost() {
       >
         <Box display="flex" alignItems="center" w="full">
           {/* post form */}
-          <Box as="form" mb={6} rounded="lg" shadow="xl" bg={["white"]} >
+          <Box mb={6} rounded="lg" shadow="xl" bg={["white"]} >
             <Center pb={0} color="Black" _dark={{ color: "white" }}>
               <chakra.p pt={2}>Spread the word ... Share your info</chakra.p>
             </Center>
+            <chakra.form
+                noValidate
+                validated={validated}
+                onSubmit={handleSubmit}
+              >
             <SimpleGrid
               columns={1}
               px={6}
@@ -110,8 +116,8 @@ export default function CreatePost() {
               _dark={{ color: "gray.700" }}
             >
               <Flex>
-                <FormControl noValidate /*validated={validated}*/ onSubmit={handleSubmit}>
-                  <VisuallyHidden>Title</VisuallyHidden>
+                <FormControl>
+                  {/* <VisuallyHidden>Title</VisuallyHidden> */}
                   <Input
                     mt={0}
                     type="text"
@@ -124,8 +130,8 @@ export default function CreatePost() {
                 </FormControl>
               </Flex>
               <Flex>
-                <FormControl /*validated={validated}*/ onSubmit={handleSubmit}>
-                  <VisuallyHidden>Post Body</VisuallyHidden>
+                <FormControl>
+                  {/* <VisuallyHidden>Post Body</VisuallyHidden> */}
                   <Input
                     mt={0}
                     type="text"
@@ -137,17 +143,17 @@ export default function CreatePost() {
                   />
                 </FormControl>
               </Flex>
-              <Flex>
-                <FormControl /*validated={validated}*/ onSubmit={handleSubmit}>
-                  <VisuallyHidden
-                    onChange={handleInputChange}
-                    name="tag"
-                    value={postData.tag}
-                    isRequired
-                  >UFO
-                  </VisuallyHidden>
-                </FormControl>
-              </Flex>
+              {/* <Flex>
+                  <FormControl>
+                    <VisuallyHidden
+                      onChange={handleInputChange}
+                      name="tag"
+                      value={postData.tag}
+                      isRequired
+                    >UFO
+                    </VisuallyHidden>
+                  </FormControl>
+                </Flex> */}
 
               {/* <Flex>
                 <FormControl  validated={validated} onSubmit={handleSubmit}>
@@ -171,9 +177,7 @@ export default function CreatePost() {
                 disabled={
                   !(
                     postData.title &&
-                    postData.body &&
-                    postData.tag &&
-                    postData.comments
+                    postData.body
                   )
                 }
                 variant="success"
@@ -181,10 +185,11 @@ export default function CreatePost() {
                 SAY YOUR PIECE
               </Button>
             </Flex>
-          </Box>
+          </chakra.form>
         </Box>
       </Box>
-    </Flex>
+    </Box>
+    </Flex >
   );
 };
 

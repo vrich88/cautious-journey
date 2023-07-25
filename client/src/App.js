@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
   InMemoryCache,
@@ -16,6 +17,7 @@ import Navbar from "./components/Navbar";
 import UFOsubForum from "./pages/UFOsubForum";
 import CryptidsubForum from "./pages/CryptidsubForum";
 import OtherssubForum from "./pages/OtherssubForum";
+import { Switch } from "@chakra-ui/react";
 // import SinglePostReader from "./pages/SinglePostReader"
 
 // Construct our main GraphQL API endpoint
@@ -45,18 +47,31 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Router>
+      <BrowserRouter>
         <Navbar />
+        {/* <Switch> */}
         <Routes>
+          {/* testing  */}
+          {/* <Route exact path="/" component={Homepage} />
+          <Route exact path="/homepage" component={Homepage} />
+          <Route exact path="/signup" component={SignupForm} />
+          <Route exact path="/login" component={LoginForm} />
+          <Route exact path="/ufo" component={UFOsubForum} />
+          <Route exact path="/cryptid" component={CryptidsubForum} />
+          <Route exact path="/others" component={OtherssubForum} /> */}
+
+
+            {/* below works on local host */}
           <Route path="/" element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/ufo" element={<UFOsubForum />} />
-          <Route path="/cryptid" element={<UFOsubForum />} />
-          <Route path="/others" element={<UFOsubForum />} />
+          <Route path="/cryptid" element={<CryptidsubForum />} />
+          <Route path="/others" element={<OtherssubForum />} />
         </Routes>
-      </Router>
+        {/* </Switch> */}
+      </BrowserRouter>
       <Footer />
     </ApolloProvider>
   );

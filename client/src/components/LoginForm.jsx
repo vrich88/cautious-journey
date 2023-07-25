@@ -3,6 +3,8 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import {
+  chakra,
+  Alert,
   Box,
   Heading,
   FormControl,
@@ -15,15 +17,15 @@ import {
 
 const LoginForm = () => {
   const [userData, setUserData] = useState({
-    username: "",
-    password: "",
+    username: '',
+    password: '',
   });
 
-  // const [validated] = useState(false);
+  const [validated] = useState(false);
 
   const [showAlert, setShowAlert] = useState(false);
 
-  const [loginUser, { error }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   useEffect(() => {
     if (error) {
@@ -47,18 +49,25 @@ const LoginForm = () => {
       event.stopPropagation();
     }
     try {
-      const { data } = await loginUser({
-        variables: { ...userData },
+      const { data } = await login({
+        variables: { 
+          username: userData.username,
+          password: userData.password
+        },
       });
       console.log(data);
-      Auth.loginUser(data.loginUser.token);
+      Auth.login(data.login.token);
+      console.log(data.login.token);
+      // if (data) {
+      //   console.log(`good job being alive, ${data.username}`)
+      // }
     } catch (err) {
       console.log(err);
     }
 
     setUserData({
-      username: "",
-      password: "",
+      username: '',
+      password: '',
     })
   };
   // housing here
@@ -73,22 +82,34 @@ const LoginForm = () => {
           boxShadow="md"
           mt="10"
         >
-
-          <Heading size="lg" marginBottom="9" color="primary.900">Login</Heading>
-          <FormControl id="username" marginBottom="4" color="primary.900">
-            <FormLabel>User Name</FormLabel>
-            <Input
+          <chakra.form
+            noValidate 
+            validated={validated} 
+            onSubmit={handleLogin}
+          >
+            <Alert
+              dismissible
+              onClose={() => setShowAlert(false)}
+              show={showAlert}
+              variant="danger"
+            >
+              WHY ARE YOU TRYING TO TRICK US
+            </Alert>
+            <Heading size="lg" marginBottom="9" color="primary.900">Login</Heading>
+            <FormControl id="username" marginBottom="4" color="primary.900">
+              <FormLabel>User Name</FormLabel>
+              <Input
             
               type="text"
               placeholder="Enter your username"
               name="username"
               value={userData.username}
               onChange={handleInput}
-            />
-          </FormControl>
-          <FormControl id="password" marginBottom="5" color="primary.900">
-            <FormLabel>Password</FormLabel>
-            <Input
+              />
+            </FormControl>
+            <FormControl id="password" marginBottom="5" color="primary.900">
+              <FormLabel>Password</FormLabel>
+              <Input
               type="password"
               placeholder="Enter your password"
               name="password"
@@ -98,12 +119,31 @@ const LoginForm = () => {
           </FormControl>
           <Button colorScheme="purple" onClick={handleLogin}>Login</Button>
           <Box color='white'>
+
+              />
+            </FormControl>
+            <Button 
+              colorScheme="purple" 
+              type="submit"
+              disabled={
+                !(
+                  userData.username &&
+                  userData.password
+                )
+              }>
+                Login
+              </Button>
+          </chakra.form>
+        <Box color="white">
         <h2> Not a member?</h2>
+        <Link href="/signup">
         <Button colorScheme="gray" size="sm">
-          <Link href="/signup">Sign-Up</Link>
+          Sign-Up
         </Button>
+        </Link>
       </Box>
-          
+        </Box>
+      </Box> 
         </Box>
       </Box>
     </Flex>

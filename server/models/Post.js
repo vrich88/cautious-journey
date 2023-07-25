@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 // const { User } = require("./User");
-const tagSchema = require("./Tag");
+// const tagSchema = require("./Tag");
 
 // look into react-moment dependency and how modify Moment tag on front end
 
@@ -24,11 +24,11 @@ const postSchema = new Schema({
   //   ref: "User",
   //   required: true,
   // },
-  comments: [{
-    type: Schema.Types.ObjectId,
-    ref: "Comment",
-    required: false,
-  }],
+  // comments: [{
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Comment",
+  //   required: false,
+  // }],
   // views: {
   //   type: Number,
   //   default: 1,
@@ -43,7 +43,7 @@ const postSchema = new Schema({
   //   type: Date,
   //   default: Date.now,
   // },
-  tag: {tagSchema}
+  // tag: {tagSchema}
 });
 
 // postSchema.virtual('user').get(function () {

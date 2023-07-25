@@ -27,15 +27,15 @@ export const LOGIN_USER = gql`
 `;
 
 export const CREATE_POST = gql`
-  mutation createPost($postData: PostInput!) {
-    createPost(postData: $postData) {
+mutation createPost($title: String!, $body: String!) {
+  createPost(title: $title, body: $body) {
+    post {
       _id
       title
-      tag
       body
-      comments
     }
   }
+}
 `;
 
 // export const DELETE_POST = gql`

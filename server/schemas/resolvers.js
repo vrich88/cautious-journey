@@ -15,9 +15,12 @@ const resolvers = {
       );
       return userData;
     },
-    post: async (parent, args, context) => {
+    singlePost: async (parent, args, context) => {
       const postData = await Post.findOne({ _id: args._id });
       return postData;
+    },
+    posts: async () => {
+      return Post.find();
     },
   },
   Mutation: {
@@ -43,11 +46,11 @@ const resolvers = {
       return { token, user };
     },
     createPost: async (parent, args, context) => {
-      if (context.user) {
-        const newPost = await Post.create(args.postData);
+      // if (context.user) {
+        const newPost = await Post.create(args);
         return newPost;
-      }
-      throw new AuthenticationError("Only those in the know can do that");
+      // }
+      // throw new AuthenticationError("Only those in the know can do that");
     },
 
     deletePost: async (parent, args, context) => {

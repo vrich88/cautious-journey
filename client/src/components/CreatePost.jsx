@@ -20,13 +20,10 @@ import { CREATE_POST } from "../utils/mutations";
 export default function CreatePost() {
   const [postData, setPostData] = useState({
     title: "",
-    body: "",
-    comments: [],
-    timePosted: "",
-    tag: {},
+    body: ""
   });
 
-  // const [validated] = useState(false);
+  const [validated] = useState(false);
 
   const [showAlert, setShowAlert] = useState(false);
 
@@ -57,10 +54,12 @@ export default function CreatePost() {
 
     try {
       const { data } = await createPost({
-        variables: { ...postData },
+        variables: {
+          title: postData.title,
+          body: postData.body,
+        },
       });
       console.log(data);
-      // Auth.login(data.createUser.token);
     } catch (err) {
       console.error(err);
     }
@@ -68,8 +67,8 @@ export default function CreatePost() {
     setPostData({
       title: "",
       body: "",
-      comments: [],
-      tag: {},
+      // comments: [],
+      // tag: {},
     });
   };
 
@@ -94,10 +93,15 @@ export default function CreatePost() {
       >
         <Box display="flex" alignItems="center" w="40rem">
           {/* post form */}
-          <Box as="form" mb={6} rounded="lg" shadow="xl" bg={["white"]} >
+          <Box mb={6} rounded="lg" shadow="xl" bg={["white"]} >
             <Center pb={0} color="Black" _dark={{ color: "white" }}>
               <chakra.p pt={2}>Spread the word ... Share your info</chakra.p>
             </Center>
+            <chakra.form
+                noValidate
+                validated={validated}
+                onSubmit={handleSubmit}
+              >
             <SimpleGrid
               columns={1}
               px={6}
@@ -109,7 +113,7 @@ export default function CreatePost() {
               _dark={{ color: "gray.700" }}
             >
               <Flex>
-                <FormControl noValidate /*validated={validated}*/ onSubmit={handleSubmit}>
+                <FormControl>
                   <VisuallyHidden>Title</VisuallyHidden>
                   <Input
                     mt={0}
@@ -123,7 +127,7 @@ export default function CreatePost() {
                 </FormControl>
               </Flex>
               <Flex>
-                <FormControl /*validated={validated}*/ onSubmit={handleSubmit}>
+                <FormControl>
                   <VisuallyHidden>Post Body</VisuallyHidden>
                   <Input
                     mt={0}
@@ -136,17 +140,17 @@ export default function CreatePost() {
                   />
                 </FormControl>
               </Flex>
-              <Flex>
-                <FormControl /*validated={validated}*/ onSubmit={handleSubmit}>
-                  <VisuallyHidden
-                    onChange={handleInputChange}
-                    name="tag"
-                    value={postData.tag}
-                    isRequired
-                  >UFO
-                  </VisuallyHidden>
-                </FormControl>
-              </Flex>
+              {/* <Flex>
+                  <FormControl>
+                    <VisuallyHidden
+                      onChange={handleInputChange}
+                      name="tag"
+                      value={postData.tag}
+                      isRequired
+                    >UFO
+                    </VisuallyHidden>
+                  </FormControl>
+                </Flex> */}
 
               {/* <Flex>
                 <FormControl  validated={validated} onSubmit={handleSubmit}>
@@ -170,9 +174,7 @@ export default function CreatePost() {
                 disabled={
                   !(
                     postData.title &&
-                    postData.body &&
-                    postData.tag &&
-                    postData.comments
+                    postData.body
                   )
                 }
                 variant="success"
@@ -180,10 +182,11 @@ export default function CreatePost() {
                 SAY YOUR PIECE
               </Button>
             </Flex>
-          </Box>
+          </chakra.form>
         </Box>
       </Box>
-    </Flex>
+    </Box>
+    </Flex >
   );
 };
 

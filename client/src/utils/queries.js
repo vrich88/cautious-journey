@@ -7,7 +7,6 @@ export const QUERY_ALLUSERS = gql`
       username: String!
       email: String
       password: String!
-      posts: [Post]
     }
   }
 `;
@@ -24,14 +23,22 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_ALLPOSTS = gql`
+  query allPosts {
+    posts {
+      _id: ID!
+      title: String!
+      body: String!
+    }
+  }
+`;
+
 export const QUERY_POST = gql`
   {
-    post {
+    singlePost {
       _id
       title
-      tag
       body
-      comments
     }
   }
 `;

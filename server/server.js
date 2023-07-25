@@ -29,14 +29,29 @@ app.use(express.json());
 
 // this part works local host has cannot GET for routes
 // Serve up static assets
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// }
+
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/'));
+// })
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/'));
-})
-// trying again
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
+}
+
+
 // Create a new instance of an Apollo server with the GraphQL schema
 // const startApolloServer = async (typeDefs, resolvers) => {
   const startApolloServer = async () => {

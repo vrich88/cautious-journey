@@ -40,7 +40,7 @@ export default function Homepage() {
           w={{ base: "700px", md: "300px", lg: "35%" }}
         >
           <Flex justifyContent={"center"}>
-            {/* Black device */}
+            {/* 2nd Black device Container*/}
             <Box
               borderWidth="0px"
               borderColor={"white"}
@@ -50,12 +50,13 @@ export default function Homepage() {
               w={{ base: "350px", md: "270px", lg: "20rem" }}
 
             >
+              {/* Black device */}
               <Box
                 borderWidth="0.5px"
                 borderColor={"blackAlpha.600"}
                 backgroundColor={"gray.900"}
                 mt={"5"}
-                h={{ base: "70vh", sm: "65vh", md: "70vh", xl: "60vh" }}
+                h={{ base: "65vh", sm: "65vh", md: "60vh", xl: "60vh" }}
                 w={{ base: "350px", md: "270px", lg: "20rem" }}
                 borderBottomRightRadius={120}
                 borderBottomLeftRadius={120}
@@ -100,7 +101,8 @@ export default function Homepage() {
                 <Flex justifyContent={"center"}>
                   <Box
                     borderWidth="4px"
-                    borderColor={"gray"}
+                    boxShadow={"0px 0px 30px black"}
+                    borderColor={"gray.600"}
                     mt={"8"}
                     h={{ base: "200px", md: "200px", lg: "190px", xl: "200px" }}
                     w={{ base: "170px", md: "170px", lg: "170px" }}
@@ -135,6 +137,7 @@ export default function Homepage() {
           w={{ base: "0px", md: "20rem", lg: "65%" }}
         >
           <Flex justifyContent={"center"}>
+            {/* Folder tabs Container */}
             <Box
               borderWidth="0px"
               borderColor={"white"}
@@ -185,7 +188,7 @@ export default function Homepage() {
                   >
                     <TabPanels>
                       <TabPanel>
-                        <p>Ufo cryptids and others</p>
+                        <p>Equinox is a forum for avid believers of the unexplained. Whether you've seen a UFO, the Moth Man, or had a real life encouter with a spirit, we believe you and your story is wanted. Become a member to login, contribute to conversations, and discuss the truth with friends all over the world!</p>
                       </TabPanel>
                       <TabPanel>
                         <p>We will be showcasing the top 10 users on our site here and this will be updated in the future!</p>

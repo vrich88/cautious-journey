@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Image, Link, chakra } from "@chakra-ui/react";
+import { Box, Flex, Link, chakra } from "@chakra-ui/react";
 import UFOseeds from "../assets/data/UFOseeds";
 import { useQuery } from "@apollo/client";
 
@@ -47,6 +47,7 @@ const UFOcards = () => {
 
             <Box mt={2}>
               <Link
+              href="/reader"
                 fontSize="2xl"
                 color="gray.700"
                 _dark={{ color: "white" }}

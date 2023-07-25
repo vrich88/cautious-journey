@@ -18,6 +18,7 @@ import UFOsubForum from "./pages/UFOsubForum";
 import CryptidsubForum from "./pages/CryptidsubForum";
 import OtherssubForum from "./pages/OtherssubForum";
 import { Switch } from "@chakra-ui/react";
+import SinglePostReader from "./pages/SinglePostReader";
 // import SinglePostReader from "./pages/SinglePostReader"
 
 // Construct our main GraphQL API endpoint
@@ -69,6 +70,7 @@ function App() {
           <Route path="/ufo" element={<UFOsubForum />} />
           <Route path="/cryptid" element={<CryptidsubForum />} />
           <Route path="/others" element={<OtherssubForum />} />
+          <Route path="/reader" element={<SinglePostReader/>} />
         </Routes>
         {/* </Switch> */}
       </BrowserRouter>

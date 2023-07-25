@@ -134,9 +134,11 @@ const LoginForm = () => {
 
       <Box>
         <h2> Not a member?</h2>
+        <Link to="/signup">
         <Button colorScheme="gray" size="sm">
-          <Link href="/signup">Sign-Up</Link>
+          Sign-Up
         </Button>
+        </Link>
       </Box>
 
     </Flex>

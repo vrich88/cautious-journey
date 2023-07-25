@@ -134,7 +134,7 @@ const LoginForm = () => {
 
       <Box>
         <h2> Not a member?</h2>
-        <Link to="/signup">
+        <Link href="/signup">
         <Button colorScheme="gray" size="sm">
           Sign-Up
         </Button>

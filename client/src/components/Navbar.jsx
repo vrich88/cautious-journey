@@ -161,7 +161,7 @@ const Navbar = () => {
         justifySelf="self-start"
         onClick={mobileNav.onClose}
       />
-      <Link to="/" w="full">
+      <Link href="/" w="full">
       <Button w="full" variant="ghost" leftIcon={<AiFillHome />}>
      Home
       </Button>
@@ -193,7 +193,7 @@ const Navbar = () => {
         py={4}
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
-          <Link display="flex" alignItems="center" to="/">
+          <Link display="flex" alignItems="center" href="/">
             {/* Replace with your logo */}
             <chakra.img boxSize="50px" src={alien} alt="Logo" />
           </Link>
@@ -232,7 +232,7 @@ const Navbar = () => {
                   {Features}
                 </Box>
               </Box>
-              <Link to="/ufo">
+              <Link href="/ufo">
               <Button
                 bg={bg}
                 color="gray.500"
@@ -251,7 +251,7 @@ const Navbar = () => {
                 
               </Button>
               </Link>
-              <Link to="/cryptid">
+              <Link href="/cryptid">
               <Button
                 bg={bg}
                 color="gray.500"
@@ -270,7 +270,7 @@ const Navbar = () => {
                 
               </Button>
               </Link>
-              <Link to="/others">
+              <Link href="/others">
               <Button
                 bg={bg}
                 color="gray.500"
@@ -294,12 +294,12 @@ const Navbar = () => {
           <Spacer />
           <Box display="flex" alignItems="center">
             <HStack spacing={1}>
-            <Link to="/login">
+            <Link href="/login">
               <Button colorScheme="brand" variant="ghost" size="sm">
                 Login
               </Button>
               </Link>
-              <Link onClick={Auth.logout} to="/">
+              <Link onClick={Auth.logout} href="/">
               <Button variant="solid" size="sm">
                 Logout
               </Button>

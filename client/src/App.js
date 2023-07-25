@@ -48,13 +48,24 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          {/* testing  */}
+          <Route exact path="/" element={<Homepage />} />
+          <Route exact path="/homepage" element={<Homepage />} />
+          <Route exact path="/signup" element={<SignupForm />} />
+          <Route exact path="/login" element={<LoginForm />} />
+          <Route exact path="/ufo" element={<UFOsubForum />} />
+          <Route exact path="/cryptid" element={<CryptidsubForum />} />
+          <Route exact path="/others" element={<OtherssubForum />} />
+
+
+            {/* below works on local host */}
+          {/* <Route path="/" element={<Homepage />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/ufo" element={<UFOsubForum />} />
           <Route path="/cryptid" element={<CryptidsubForum />} />
-          <Route path="/others" element={<OtherssubForum />} />
+          <Route path="/others" element={<OtherssubForum />} /> */}
         </Routes>
       </Router>
       <Footer />

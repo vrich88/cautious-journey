@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Flex, Image, Link, chakra } from "@chakra-ui/react";
+import Placeholder from "../components/Placeholder";
 
 const CryptidsubForum = () => {
   return (

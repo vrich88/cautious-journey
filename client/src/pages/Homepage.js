@@ -65,12 +65,12 @@ export default function Homepage() {
                 boxShadow={"-5px -2px 20px black, -8px -4px 0px rgb(51 50 52), -3px -4px 0px rgb(51 50 52), -4px -6px 0px rgb(39 38 40), -10px -6px 0px rgb(39 38 40)"}
               >
                 <Flex justifyContent={"space-between"} pt="0.4rem" px="0.4rem">
-                  <Link to="/login">
+                  <Link href="/login">
                     <Button colorScheme="gray" size="sm">
                       Login
                     </Button>
                   </Link>
-                  <Link to="/signup">
+                  <Link href="/signup">
                     <Button colorScheme="gray" size="sm">
                       Sign-Up
                     </Button>

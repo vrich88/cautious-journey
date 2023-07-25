@@ -93,7 +93,7 @@ export default function CreatePost() {
         bg="white"
         _dark={{ bg: "gray.800" }}
       >
-        <Box display="flex" alignItems="center" w="40rem">
+        <Box display="flex" alignItems="center" w="full">
           {/* post form */}
           <Box mb={6} rounded="lg" shadow="xl" bg={["white"]} >
             <Center pb={0} color="Black" _dark={{ color: "white" }}>

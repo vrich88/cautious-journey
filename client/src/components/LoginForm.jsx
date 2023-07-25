@@ -73,12 +73,12 @@ const LoginForm = () => {
   // housing here
   return (
     <Flex>
-      <Box display="flex" justifyContent="flex-start" m={6} bg={["black"]}>
+      <Box display="flex" justifyContent="flex-start" m={0} bg={["black"]} w="full" h="90vh">
         <Box
           maxWidth="sm"
           margin="0 auto"
-          padding="8"
-          borderWidth="1px"
+          mt="8"
+          borderWidth="0px"
           borderRadius="md"
           boxShadow="md"
         >
@@ -129,10 +129,7 @@ const LoginForm = () => {
                 Login
               </Button>
           </chakra.form>
-        </Box>
-      </Box>
-
-      <Box>
+          <Box color="white">
         <h2> Not a member?</h2>
         <Link href="/signup">
         <Button colorScheme="gray" size="sm">
@@ -140,6 +137,10 @@ const LoginForm = () => {
         </Button>
         </Link>
       </Box>
+        </Box>
+      </Box>
+
+      
 
     </Flex>
   );

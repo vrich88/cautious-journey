@@ -161,7 +161,7 @@ const Navbar = () => {
         justifySelf="self-start"
         onClick={mobileNav.onClose}
       />
-      <Link href="/" w="full">
+      <Link to="/" w="full">
       <Button w="full" variant="ghost" leftIcon={<AiFillHome />}>
      Home
       </Button>
@@ -193,7 +193,7 @@ const Navbar = () => {
         py={4}
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
-          <Link display="flex" alignItems="center" href="/">
+          <Link display="flex" alignItems="center" to="/">
             {/* Replace with your logo */}
             <chakra.img boxSize="50px" src={alien} alt="Logo" />
           </Link>
@@ -232,6 +232,7 @@ const Navbar = () => {
                   {Features}
                 </Box>
               </Box>
+              <Link to="/ufo">
               <Button
                 bg={bg}
                 color="gray.500"
@@ -245,10 +246,12 @@ const Navbar = () => {
                   boxShadow: "none",
                 }}
               >
-                <Link to="ufos">
+                
                   UFO's
-                </Link>
+                
               </Button>
+              </Link>
+              <Link to="/cryptid">
               <Button
                 bg={bg}
                 color="gray.500"
@@ -262,10 +265,12 @@ const Navbar = () => {
                   boxShadow: "none",
                 }}
               >
-                <Link to="/cryptids">
+                
                   Cryptid's
-                </Link>
+                
               </Button>
+              </Link>
+              <Link to="/others">
               <Button
                 bg={bg}
                 color="gray.500"
@@ -279,21 +284,26 @@ const Navbar = () => {
                   boxShadow: "none",
                 }}
               >
-                <Link to="/others">
+                
                 The Other's
-                </Link>
+               
               </Button>
+              </Link>
             </HStack>
           </Box>
           <Spacer />
           <Box display="flex" alignItems="center">
             <HStack spacing={1}>
+            <Link to="/login">
               <Button colorScheme="brand" variant="ghost" size="sm">
-                <Link href="/login">Login</Link>
+                Login
               </Button>
+              </Link>
+              <Link onClick={Auth.logout} to="/">
               <Button variant="solid" size="sm">
-                <Link onClick={Auth.logout} to="/">Logout</Link>
+                Logout
               </Button>
+              </Link>
             </HStack>
             {/* <IconButton
               size="md"

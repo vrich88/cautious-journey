@@ -161,20 +161,22 @@ const Navbar = () => {
         justifySelf="self-start"
         onClick={mobileNav.onClose}
       />
+      <Link href="/" w="full">
       <Button w="full" variant="ghost" leftIcon={<AiFillHome />}>
-        Dashboard
+     Home
       </Button>
-      <Button
+      </Link>
+      {/* <Button
         w="full"
         variant="solid"
         colorScheme="brand"
         leftIcon={<AiOutlineInbox />}
       >
         Inbox
-      </Button>
-      <Button w="full" variant="ghost" leftIcon={<BsFillCameraVideoFill />}>
+      </Button> */}
+      {/* <Button w="full" variant="ghost" leftIcon={<BsFillCameraVideoFill />}>
         Videos
-      </Button>
+      </Button> */}
     </VStack>
   );
 
@@ -293,7 +295,7 @@ const Navbar = () => {
                 <Link onClick={Auth.logout} to="/">Logout</Link>
               </Button>
             </HStack>
-            <IconButton
+            {/* <IconButton
               size="md"
               fontSize="lg"
               aria-label={`Switch to ${text} mode`}
@@ -305,7 +307,7 @@ const Navbar = () => {
               }}
               onClick={toggleMode}
               icon={<SwitchIcon />}
-            />
+            /> */}
             <IconButton
               display={{
                 base: "flex",

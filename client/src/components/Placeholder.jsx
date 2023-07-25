@@ -1,5 +1,6 @@
 import React from "react";
-import { chakra, Box, Flex, Icon, Stack } from "@chakra-ui/react";
+import { chakra, Box, Flex, Icon, Stack, Image } from "@chakra-ui/react";
+// import abduct from "../assets/images/abduct";
 
 export default function Placeholder() {
   const Feature = (props) => {
@@ -53,6 +54,9 @@ export default function Placeholder() {
       justifyContent="center"
       alignItems="center"
     >
+                  {/* <Image src={abduct}>
+              Sorry this page was abducted; but look for it to be retrieved soon
+            </Image> */}
       <Box py={12} bg="black" _dark={{ bg: "white" }} rounded="xl">
         <Box maxW="xl" mx="800" px={{ base: 6, lg: 9 }}>
           <Box textAlign={{ xl: "center" }}>

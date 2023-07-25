@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentCard from '../components/CommentCard';
+import CreateComment from "../components/CreateComment";
 import {
   Box,
   Flex,
@@ -78,6 +79,7 @@ function SinglePostReader() {
           </Center>
         </Box>
         < CommentCard />
+        < CreateComment />
       </Box>
     </Flex>
   );

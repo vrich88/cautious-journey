@@ -17,14 +17,25 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// testing
 // Serve up static assets
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use(express.static(path.join(__dirname, 'client/build')));
 }
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/'));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build','index.html'));
 })
+
+// this part works local host
+// // Serve up static assets
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '../client/build')));
+// }
+
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/'));
+// })
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {

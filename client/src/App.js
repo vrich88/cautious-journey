@@ -53,8 +53,8 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/ufo" element={<UFOsubForum />} />
-          <Route path="/cryptid" element={<UFOsubForum />} />
-          <Route path="/others" element={<UFOsubForum />} />
+          <Route path="/cryptid" element={<CryptidsubForum />} />
+          <Route path="/others" element={<OtherssubForum />} />
         </Routes>
       </Router>
       <Footer />

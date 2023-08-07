@@ -111,13 +111,13 @@ export default function Homepage() {
                   >
                     <Flex flexDirection={"column"} flexWrap={"wrap"} alignContent={"space-between"}>
                       <Button colorScheme="gray" size="sm" w={"160px"} mt={4}>
-                        Dashboard
+                        Special
                       </Button>
                       <Button colorScheme="gray" size="sm" w={"160px"} mt={4}>
-                        About
+                      Features
                       </Button>
                       <Button colorScheme="gray" size="sm" w={"160px"} mt={4}>
-                        Contact
+                      Coming Soon....
                       </Button>
                     </Flex>
                   </Box>

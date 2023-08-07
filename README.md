@@ -17,7 +17,7 @@ Equinox is a forum for avid believers of the unexplained. Whether you've seen a 
 
 After arriving to the forum, sign up to become a member and then sign in to begin interacting with others. Posts, comments, and a voting system will allow you to contribute in a variety of ways.
 
-    ``md     ![alt text](assets/images/screenshot.png)     ``
+![mainpage](/cautious-journey/client/src/assets/images/Mainpage.PNG)     
 
 ## Credits
 
